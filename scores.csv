@@ -1,0 +1,102 @@
+﻿Domain,Subdomain,Indicator,Meta,Hugging Face,OpenAI,Stability AI,Google,Anthropic,Cohere,AI21 Labs,Inflection,Amazon,Total
+Upstream,Data,Data size,1,1,0,1,0,0,1,0,0,0,4
+Upstream,Data,Data sources,0,1,0,0,0,0,0,0,0,0,1
+Upstream,Data,Data creators ,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Data,Data source selection,0,1,0,0,0,0,0,0,0,0,1
+Upstream,Data,Data curation,1,1,1,1,1,0,1,0,0,0,6
+Upstream,Data,Data augmentation,1,1,0,1,1,0,0,0,0,0,4
+Upstream,Data,Harmful data filtration,1,1,1,1,0,0,0,0,0,0,4
+Upstream,Data,Data copyright status,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Data,Data license status,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Data,Personal information in data,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Data labor,Use of human labor,1,1,0,0,0,0,0,0,0,0,2
+Upstream,Data labor,Employment of data laborers,0,1,0,0,0,0,0,0,0,0,1
+Upstream,Data labor,Geographic distribution of data laborers,0,1,0,0,0,0,0,0,0,0,1
+Upstream,Data labor,Wages,0,1,0,0,0,1,0,0,0,0,2
+Upstream,Data labor,Instructions for creating data,1,1,0,0,0,1,0,0,0,0,3
+Upstream,Data labor,Labor protections,0,0,1,0,0,0,0,0,0,0,1
+Upstream,Data labor,Third party partners,0,1,0,1,0,0,0,0,0,0,2
+Upstream,Data access,Queryable external data access,0,1,0,1,0,0,0,0,0,0,2
+Upstream,Data access,Direct external data access,0,1,0,1,0,0,0,0,0,0,2
+Upstream,Compute,Compute usage,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Compute,Development duration,1,0,0,1,0,0,0,0,0,0,2
+Upstream,Compute,Compute hardware,0,1,0,1,0,0,0,0,0,0,2
+Upstream,Compute,Hardware owner,1,0,1,1,1,0,1,0,0,0,5
+Upstream,Compute,Energy usage,1,0,0,0,0,0,0,0,0,0,1
+Upstream,Compute,Carbon emissions,1,0,0,1,0,0,0,0,0,0,2
+Upstream,Compute,Broader environmental impact,0,0,0,0,0,0,0,0,0,0,0
+Upstream,Methods,Model stages,1,1,1,1,1,1,0,0,0,0,6
+Upstream,Methods,Model objectives,1,1,1,1,0,1,0,0,0,0,5
+Upstream,Methods,Core frameworks,0,1,0,1,1,0,0,0,0,0,3
+Upstream,Methods,Additional dependencies,1,1,0,1,1,1,0,0,0,0,5
+Upstream,Data Mitigations,Mitigations for privacy,1,1,1,1,0,0,0,0,0,0,4
+Upstream,Data Mitigations,Mitigations for copyright,0,1,0,0,0,0,0,0,0,0,1
+Model,Model basics,Input modality,1,1,1,1,1,1,1,1,1,1,10
+Model,Model basics,Output modality,1,1,1,1,1,1,1,1,1,1,10
+Model,Model basics,Model components,1,1,0,1,0,0,0,0,0,0,3
+Model,Model basics,Model size,1,1,0,0,0,0,0,0,0,0,2
+Model,Model basics,Model architecture,1,1,0,1,1,1,0,0,0,0,5
+Model,Model basics,Centralized model documentation,1,1,1,1,1,1,1,0,1,0,8
+Model,Model access,External model access protocol,1,1,1,1,0,0,1,0,0,0,5
+Model,Model access,Blackbox external model access,1,1,1,1,1,1,1,1,0,1,9
+Model,Model access,Full external model access,1,1,0,1,0,0,0,0,0,0,3
+Model,Capabilities,Capabilities description,0,1,1,1,1,1,1,1,1,1,9
+Model,Capabilities,Capabilities demonstration,1,1,1,1,1,1,1,1,0,0,8
+Model,Capabilities,Evaluation of capabilities,1,1,1,0,1,1,0,0,1,0,6
+Model,Capabilities,External reproducibility of capabilities evaluation,1,1,1,0,1,1,0,0,0,0,5
+Model,Capabilities,Third-party capabilities evaluation,0,0,1,0,0,0,1,1,0,0,3
+Model,Limitations,Limitations description,1,1,1,1,1,1,1,0,1,0,8
+Model,Limitations,Limitations demonstration,0,0,0,0,0,0,1,0,0,0,1
+Model,Limitations,Third-party evaluation of limitations,1,1,1,1,1,1,1,1,0,1,9
+Model,Risks,Risks description,1,0,1,1,0,1,1,1,0,0,6
+Model,Risks,Risks demonstration,1,0,1,0,0,0,0,0,0,0,2
+Model,Risks,Unintentional harm evaluation,1,0,0,0,1,0,0,0,0,0,2
+Model,Risks,External reproducibility of unintentional harm evaluation,1,0,0,0,1,0,0,0,0,0,2
+Model,Risks,Intentional harm evaluation,0,0,0,0,0,0,0,0,0,0,0
+Model,Risks,External reproducibility of intentional harm evaluation,0,0,1,0,0,0,0,0,0,0,1
+Model,Risks,Third-party risks evaluation,0,0,1,0,0,1,1,1,0,0,4
+Model,Model Mitigations,Mitigations description,1,0,1,0,1,1,1,0,1,1,7
+Model,Model Mitigations,Mitigations demonstration,1,0,1,0,0,0,0,0,0,0,2
+Model,Model Mitigations,Mitigations evaluation,1,0,1,0,1,1,0,0,0,0,4
+Model,Model Mitigations,External reproducibility of mitigations evaluation,0,0,0,0,0,0,0,0,0,0,0
+Model,Model Mitigations,Third-party mitigations evaluation,0,0,0,0,0,0,0,0,0,0,0
+Model,Trustworthiness,Trustworthiness evaluation,0,0,1,0,0,0,1,1,0,0,3
+Model,Trustworthiness,External reproducibility of trustworthiness evaluation,0,0,0,0,0,0,1,1,0,0,2
+Model,Inference,Inference duration evaluation,1,1,0,0,0,0,0,0,0,0,2
+Model,Inference,Inference compute evaluation,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Distribution,Release decision-making protocol,0,1,0,0,0,0,0,0,0,0,1
+Downstream,Distribution,Release process,1,1,1,1,1,1,0,1,0,1,8
+Downstream,Distribution,Distribution channels,1,1,1,1,1,1,1,1,1,1,10
+Downstream,Distribution,Products and services,1,0,1,0,1,1,1,0,1,0,6
+Downstream,Distribution,Machine-generated content,0,0,0,1,0,0,0,0,0,0,1
+Downstream,Distribution,Model Asset License,1,1,0,1,1,0,1,0,0,0,5
+Downstream,Distribution,Terms of service,1,1,1,1,1,1,1,1,1,1,10
+Downstream,Usage policy,Permitted and prohibited users,1,0,1,0,1,1,1,0,0,0,5
+Downstream,Usage policy,"Permitted, restricted, and prohibited uses",1,1,1,1,1,1,1,1,1,1,10
+Downstream,Usage policy,Usage policy enforcement,0,0,1,1,0,1,0,0,0,0,3
+Downstream,Usage policy,Justification for enforcement action,0,0,0,0,1,0,0,0,1,0,2
+Downstream,Usage policy,Usage policy violation appeals mechanism,0,0,1,0,0,0,0,0,1,0,2
+Downstream,Model behavior policy,"Permitted, restricted, and prohibited model behaviors",0,0,1,0,0,1,0,0,1,0,3
+Downstream,Model behavior policy,Model behavior policy enforcement,0,0,0,1,0,0,0,0,1,0,2
+Downstream,Model behavior policy,Interoperability of usage and model behavior policies,0,0,1,0,0,1,0,0,0,0,2
+Downstream,User Interface,User interaction with AI system,1,1,1,1,1,0,1,1,1,0,8
+Downstream,User Interface,Usage disclaimers,1,1,1,1,1,1,1,1,1,0,9
+Downstream,User data protection,User data protection policy,1,1,1,1,1,1,1,1,1,1,10
+Downstream,User data protection,Permitted and prohibited use of user data,1,1,1,1,1,1,1,1,1,1,10
+Downstream,User data protection,Usage data access protocol,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Model Updates,Versioning protocol,1,1,1,1,1,1,0,1,0,0,7
+Downstream,Model Updates,Change log,1,1,1,1,1,0,1,1,0,0,7
+Downstream,Model Updates,Deprecation policy,1,1,1,1,1,0,0,0,0,0,5
+Downstream,Feedback,Feedback mechanism,1,1,1,1,1,1,1,1,1,0,9
+Downstream,Feedback,Feedback summary,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Feedback,Government inquiries,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Impact,Monitoring mechanism,0,0,1,0,1,0,1,1,1,0,5
+Downstream,Impact,Downstream applications,1,1,0,1,0,0,0,0,0,0,3
+Downstream,Impact,Affected market sectors,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Impact,Affected individuals,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Impact,Usage reports,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Impact,Geographic statistics,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Impact,Redress mechanism,0,0,0,0,0,0,0,0,0,0,0
+Downstream,Documentation for Deployers,Centralized documentation for downstream use,1,1,1,1,1,1,1,1,0,0,8
+Downstream,Documentation for Deployers,Documentation for responsible downstream use,1,0,1,0,1,1,1,1,0,0,6
+,,Total,54,53,48,47,40,36,34,25,21,12,
