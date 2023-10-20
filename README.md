@@ -1,6 +1,6 @@
 # The Foundation Model Transparency Index
 
-The Foundation Model Transparency Index is an ongoing initiative to comprehensively assess the transparency of foundation model developers. To learn more, please see our [website](https://crfm.stanford.edu/fmti/) and [paper](https://crfm.stanford.edu/fmti/fmti.pdf).  
+The Foundation Model Transparency Index is an ongoing initiative to comprehensively assess the transparency of foundation model developers. To learn more, please see our [website](https://crfm.stanford.edu/fmti/) and [paper](https://arxiv.org/abs/2310.12941).  
 
 Foundation models like GPT-4 and Llama 2 are used by millions of people. While the societal impact of these models is rising, transparency is on the decline. If this trend continues, foundation models could become just as opaque as social media platforms and other previous technologies, replicating their failure modes.
 
