@@ -40,6 +40,6 @@ Rishi Bommasani*, Kevin Klyman*, Shayne Longpre, Sayash Kapoor, Nestor Maslej, B
   title        = {The Foundation Model Transparency Index},
   month        = oct,
   year         = 2023,
-  url          = {https://crfm.stanford.edu/fmti/FMTI.pdf}
+  url          = {https://arxiv.org/abs/2310.12941}
 }
 ```
