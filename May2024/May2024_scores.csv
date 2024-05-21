@@ -1,0 +1,102 @@
+Indicator,Adept,AI21 Labs,Aleph Alpha,Amazon,Anthropic,BigCode,Google,IBM,Meta,Microsoft,Mistral,OpenAI,Stability,Writer
+Data size,0,1,1,0,0,1,0,1,1,1,0,0,1,1
+Data sources,0,1,0,0,0,1,0,1,0,1,0,0,0,1
+Data creators ,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Data source selection,0,1,0,0,0,1,0,1,0,1,0,0,0,0
+Data curation,0,1,1,0,1,1,0,1,1,0,0,1,1,1
+Data augmentation,0,1,1,0,0,1,0,1,1,1,1,0,1,1
+Harmful data filtration,0,1,1,0,0,1,0,1,1,0,1,1,1,1
+Data copyright status,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Data license status,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Personal information in data,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Use of human labor,0,1,1,1,0,1,1,1,1,1,1,0,1,1
+Employment of data laborers,0,0,1,0,0,1,0,1,0,1,1,0,1,1
+Geographic distribution of data laborers,0,0,1,0,0,1,0,0,0,1,1,0,1,1
+Wages,0,0,0,0,0,1,0,0,0,1,1,0,1,0
+Instructions for creating data,0,1,0,0,1,1,0,0,1,1,1,0,1,0
+Labor protections,0,0,1,0,0,1,1,0,0,1,1,1,1,0
+Third party partners,0,1,1,0,0,1,0,1,0,1,1,0,1,0
+Queryable external data access,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Direct external data access,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Compute usage,0,1,1,0,0,1,0,1,1,1,0,0,0,1
+Development duration,0,1,1,0,0,1,0,1,0,1,0,0,0,1
+Compute hardware,0,1,1,0,0,1,0,1,1,1,0,0,1,1
+Hardware owner,1,1,1,0,1,1,1,1,1,1,1,1,0,1
+Energy usage,0,1,1,0,0,1,0,1,1,0,0,0,1,1
+Carbon emissions,0,1,1,0,0,1,0,1,1,0,0,0,1,1
+Broader environmental impact,0,0,1,0,0,1,0,1,0,0,0,0,0,0
+Model stages,0,1,1,1,0,1,1,1,1,1,1,1,1,1
+Model objectives,0,1,1,1,1,1,1,1,1,1,1,1,1,1
+Core frameworks,0,1,1,0,1,1,1,1,0,1,1,0,0,1
+Additional dependencies,0,1,1,0,1,1,0,1,1,1,1,0,1,1
+Mitigations for privacy,0,1,1,0,1,1,0,1,1,1,1,1,0,1
+Mitigations for copyright,0,1,0,0,0,1,0,1,0,0,0,0,0,1
+Input modality,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Output modality,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Model components,0,1,1,1,0,1,1,1,1,1,1,0,1,1
+Model size,1,1,1,0,0,1,0,1,1,1,1,0,1,1
+Model architecture,1,1,1,1,0,1,1,1,1,1,1,0,1,1
+Centralized model documentation,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+External model access protocol,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Blackbox external model access,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Full external model access,1,0,1,0,0,1,0,0,1,1,1,0,1,0
+Capabilities description,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Capabilities demonstration,1,1,1,1,1,1,1,0,1,1,1,1,0,1
+Evaluation of capabilities,1,0,1,1,1,1,1,1,1,1,1,1,1,1
+External reproducibility of capabilities evaluation,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Third-party capabilities evaluation,0,1,1,0,1,1,0,0,1,1,1,1,0,1
+Limitations description,1,1,1,1,1,1,0,1,1,1,0,1,1,1
+Limitations demonstration,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+Third-party evaluation of limitations,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Risks description,0,1,1,1,1,1,1,1,1,0,1,1,1,1
+Risks demonstration,0,1,1,1,1,1,1,0,1,0,0,1,0,0
+Unintentional harm evaluation,0,0,0,0,1,1,0,1,1,1,0,0,0,0
+External reproducibility of unintentional harm evaluation,0,1,1,1,1,1,0,1,1,1,0,0,0,0
+Intentional harm evaluation,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+External reproducibility of intentional harm evaluation,0,0,0,0,0,1,0,1,0,0,0,1,0,0
+Third-party risks evaluation,0,1,1,0,1,1,0,0,1,0,0,1,0,0
+Mitigations description,0,1,1,1,1,0,1,1,1,0,1,1,0,1
+Mitigations demonstration,0,1,0,0,1,0,0,0,1,0,1,1,0,0
+Mitigations evaluation,0,0,0,0,0,0,0,1,1,0,1,1,0,0
+External reproducibility of mitigations evaluation,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Third-party mitigations evaluation,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+Trustworthiness evaluation,0,1,1,1,1,0,1,0,0,0,0,1,0,0
+External reproducibility of trustworthiness evaluation,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+Inference duration evaluation,0,1,1,0,0,1,0,0,1,0,0,0,1,1
+Inference compute evaluation,0,1,0,0,0,1,0,0,0,0,0,0,0,1
+Release decision-making,0,1,1,0,1,1,0,0,0,0,0,0,0,0
+Release process,0,1,1,1,1,1,0,1,1,1,1,1,1,0
+Distribution channels,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Products and services,1,1,1,0,1,1,1,1,1,0,1,1,1,1
+Machine-generated content,0,0,1,0,0,1,0,1,0,1,0,1,1,1
+License,1,1,1,1,1,1,1,1,1,1,1,0,1,1
+Terms of service,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Permitted and prohibited users,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+"Permitted, restricted, and prohibited uses",1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Usage policy enforcement,0,1,1,1,1,1,1,0,0,1,0,1,1,1
+Justification for enforcement action,0,1,1,1,1,1,1,0,0,1,0,0,0,0
+Usage policy violation appeals mechanism,0,1,1,0,1,1,1,0,0,1,0,1,0,1
+"Permitted, restricted, and prohibited model behaviors",0,1,1,1,1,1,1,0,1,1,1,1,1,1
+Model behavior policy enforcement,0,1,1,1,1,1,0,0,0,1,0,0,1,1
+Interoperability of usage and model behavior policies,0,1,1,1,1,1,0,0,0,1,0,1,1,1
+User interaction with AI system,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Usage disclaimers,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+User data protection policy,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Permitted and prohibited use of user data,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Usage data access protocol,1,1,1,0,0,0,1,1,1,1,1,0,1,0
+Versioning protocol,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Change log,1,1,1,0,0,1,0,1,1,1,1,1,1,0
+Deprecation policy,1,1,1,0,0,1,1,1,1,1,1,1,1,1
+Feedback mechanism,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Feedback summary,1,1,0,1,0,1,0,1,0,1,1,0,1,0
+Government inquiries,0,1,1,0,0,1,1,0,0,0,0,0,0,0
+Monitoring mechanism,1,1,1,0,1,0,1,0,0,0,1,1,0,1
+Downstream applications,1,0,0,0,0,1,0,0,1,0,0,0,1,0
+Affected market sectors,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Affected individuals,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Usage reports,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Geographic statistics,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Redress mechanism,0,1,1,0,0,0,1,0,0,0,0,0,0,0
+Centralized documentation for downstream use,0,1,1,1,1,1,1,1,1,1,1,1,1,1
+Documentation for responsible downstream use,0,1,1,1,1,1,1,1,1,0,1,1,1,1
+Total,33,75,75,42,51,85,47,64,60,62,55,49,58,56
