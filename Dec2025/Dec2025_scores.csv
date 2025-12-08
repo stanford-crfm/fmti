@@ -1,0 +1,101 @@
+,Indicator,AI21 Labs,Alibaba,Amazon,Anthropic,DeepSeek,Google,IBM,Meta,Midjourney,Mistral,OpenAI,Writer,xAI
+0,Data acquisition methods,1,0,1,1,0,0,1,1,0,0,0,1,0
+1,Public datasets,1,0,0,0,0,0,1,0,0,0,0,0,0
+2,Crawling,1,0,0,1,0,1,1,1,0,0,1,0,0
+3,Usage data used in training,1,0,0,0,0,0,1,1,0,0,0,1,0
+4,Notice of usage data used in training,1,0,0,1,0,1,1,1,0,0,0,1,0
+5,Licensed data sources,0,0,0,0,0,0,1,0,0,0,0,0,0
+6,Licensed data compensation,1,0,0,0,0,0,1,0,0,0,0,0,0
+7,New human-generated data sources,1,0,0,0,0,0,1,0,0,0,0,0,0
+8,Instructions for data generation,1,0,0,0,0,0,1,0,0,0,0,1,0
+9,Data laborer practices,1,0,0,0,0,0,1,0,0,0,0,1,0
+10,Synthetic data sources,1,1,0,0,1,1,1,0,0,0,0,1,0
+11,Synthetic data purpose,1,1,1,0,1,1,1,0,0,0,0,1,0
+12,Data processing methods,1,0,1,0,1,0,1,0,0,0,0,1,0
+13,Data processing purpose,1,0,0,0,1,1,1,0,0,0,0,1,0
+14,Data processing techniques,0,0,0,0,0,0,1,0,0,0,0,1,0
+15,Data size,0,1,0,0,1,0,1,1,0,0,0,1,0
+16,Data language composition,0,0,0,0,0,0,1,0,0,0,0,1,0
+17,Data domain composition,0,0,0,0,0,0,1,0,0,0,0,0,0
+18,External data access,0,0,0,0,0,0,1,0,0,0,0,0,0
+19,Data replicability,0,0,0,0,0,0,1,0,0,0,0,0,0
+20,Compute usage for final training run,0,0,0,0,0,0,1,0,0,0,0,1,0
+21,Compute usage including R&D,0,0,0,0,0,0,1,0,0,0,0,1,0
+22,Development duration for final training run,0,0,0,0,1,0,1,0,0,0,0,1,0
+23,Compute hardware for final training run,1,0,0,0,1,0,1,0,0,0,0,1,0
+24,Compute provider,1,1,1,0,1,1,1,1,0,0,0,1,1
+25,Energy usage for final training run,0,0,0,0,0,0,1,0,0,0,0,1,0
+26,Carbon emissions for final training run,0,0,0,0,0,0,1,1,0,0,0,1,0
+27,Water usage for final training run,0,0,0,0,0,0,1,0,0,0,0,1,0
+28,Internal compute allocation,0,0,0,0,1,0,1,0,0,0,0,1,0
+29,Model stages,1,1,1,0,1,1,1,0,0,0,0,1,0
+30,Model objectives,1,1,1,0,1,1,1,0,0,0,0,0,0
+31,Code access,0,0,0,0,0,0,1,0,0,0,0,0,0
+32,Organization chart,1,0,0,0,0,0,1,0,0,0,0,1,0
+33,Model cost,0,0,0,0,0,0,1,0,0,0,0,1,0
+34,Basic model properties,1,1,0,0,1,0,1,1,0,0,0,1,0
+35,Deeper model properties,1,1,0,0,1,0,1,1,0,0,0,0,0
+36,Model dependencies,1,1,0,1,1,0,1,1,0,0,0,1,0
+37,Benchmarked inference,0,0,0,0,0,0,1,0,0,0,0,1,0
+38,Researcher credits,0,0,0,1,0,1,1,1,0,0,0,1,0
+39,Specialized access,0,0,1,0,0,0,1,0,0,0,0,0,0
+40,Open weights,1,1,0,0,1,0,1,1,0,0,0,0,0
+41,Agent Protocols,1,1,1,1,1,1,1,0,0,1,0,1,0
+42,Capabilities taxonomy,1,1,1,0,1,0,1,1,0,0,0,1,0
+43,Capabilities evaluation,1,1,1,1,1,1,1,1,0,1,1,1,1
+44,External reproducibility of capabilities evaluation,1,0,0,0,0,0,1,0,0,0,0,0,0
+45,Train-test overlap,0,0,0,0,0,0,0,0,0,0,0,0,0
+46,Risks taxonomy,1,0,1,1,1,1,1,1,0,0,1,1,0
+47,Risks evaluation,1,0,0,1,0,0,1,0,0,0,1,0,0
+48,External reproducibility of risks evaluation,0,0,0,0,0,0,1,0,0,0,0,0,0
+49,Pre-deployment risk evaluation,0,0,0,0,0,0,1,0,0,0,0,1,0
+50,External risk evaluation,1,0,1,1,0,0,1,0,0,0,1,0,0
+51,Mitigations taxonomy,1,0,1,1,1,1,1,0,0,0,1,1,0
+52,Mitigations taxonomy mapped to risk taxonomy,1,0,1,1,0,0,1,0,0,0,1,0,0
+53,Mitigations efficacy,0,0,0,1,0,0,1,0,0,0,1,0,0
+54,External reproducibility of mitigations evaluation,0,0,0,0,0,0,0,0,0,0,0,0,0
+55,Model theft prevention measures,1,0,1,1,0,1,1,0,0,1,1,1,0
+56,Release stages,1,0,1,1,0,1,1,0,0,0,1,1,0
+57,Risk thresholds,1,0,1,1,0,1,1,1,0,0,1,1,0
+58,Versioning protocol,1,1,0,1,0,1,1,0,0,0,1,1,0
+59,Change log,1,1,1,1,1,1,1,1,1,1,1,1,1
+60,Foundation model roadmap,1,1,1,0,1,1,1,0,1,1,0,0,1
+61,Top distribution channels,0,1,1,1,1,1,1,0,1,0,0,1,1
+62,Quantization,1,0,0,0,1,0,1,1,1,0,0,1,0
+63,Terms of use,1,1,1,1,1,1,1,1,1,1,1,1,1
+64,Distribution channels with usage data,0,0,1,1,0,0,1,0,1,0,0,1,0
+65,Amount of usage,0,0,0,0,0,0,1,0,0,0,0,1,0
+66,Classification of usage data,0,0,0,1,0,0,1,0,0,0,0,1,0
+67,Data retention and deletion policy,1,0,0,0,0,0,1,0,0,0,1,1,0
+68,Geographic statistics,0,0,0,1,0,0,0,0,0,0,0,1,0
+69,Internal products and services,1,0,0,1,0,0,1,0,1,1,1,1,0
+70,External products and services,0,0,0,0,0,1,1,0,1,0,0,1,0
+71,Users of internal products and services,0,0,0,0,0,0,1,0,0,0,0,1,0
+72,Consumer/enterprise usage,1,0,0,0,0,0,1,0,0,0,0,1,0
+73,Enterprise users,1,0,0,0,0,0,0,0,0,0,0,1,0
+74,Government use,1,0,0,0,0,0,1,0,0,0,0,0,0
+75,Benefits Assessment,1,0,0,1,0,1,1,1,0,0,0,1,0
+76,AI bug bounty,1,0,1,0,0,1,1,1,0,1,1,1,0
+77,Responsible disclosure policy,1,0,1,1,0,1,1,1,0,1,1,1,0
+78,Safe harbor,1,0,0,1,0,0,1,0,0,1,1,1,0
+79,Security incident reporting protocol,1,0,1,1,0,1,1,0,0,0,1,0,0
+80,Misuse incident reporting protocol,1,0,0,0,0,0,1,0,0,0,0,1,0
+81,Post-deployment coordination with government,0,0,1,1,0,0,1,0,0,0,1,1,0
+82,Feedback mechanisms,0,0,0,0,0,0,1,0,0,0,0,1,0
+83,"Permitted, restricted, and prohibited model behaviors",1,0,1,1,0,1,1,0,0,0,1,0,0
+84,Model response characteristics,1,1,1,1,1,1,1,1,1,0,1,1,1
+85,System prompt,1,0,0,1,1,0,1,1,0,0,0,0,1
+86,Intermediate tokens,1,1,1,1,1,1,1,1,0,0,1,1,1
+87,Internal product and service mitigations,1,0,1,1,0,1,1,0,0,0,1,1,1
+88,External developer mitigations,1,1,1,1,0,1,1,1,1,1,1,1,0
+89,Enterprise mitigations,1,1,1,1,0,1,1,1,0,1,1,1,1
+90,Detection of machine-generated content,1,0,1,1,0,1,1,1,0,1,1,1,0
+91,Documentation for responsible use,1,0,1,1,0,1,1,1,1,1,1,1,0
+92,Permitted and prohibited users,1,1,1,1,1,1,1,1,1,1,1,1,1
+93,"Permitted, restricted, and prohibited uses",1,1,1,1,1,1,1,1,1,1,1,1,1
+94,AUP enforcement process,1,1,1,1,1,1,1,0,1,1,0,1,1
+95,AUP enforcement frequency,0,0,0,1,0,0,0,0,0,0,0,0,0
+96,Regional policy variations,1,0,1,1,0,1,1,0,0,0,1,1,0
+97,Oversight mechanism,1,0,1,1,0,1,1,0,0,0,1,1,0
+98,Whistleblower protection,1,0,0,1,0,1,1,0,0,0,1,0,0
+99,Government commitments,1,1,0,1,1,1,1,0,0,1,1,1,0

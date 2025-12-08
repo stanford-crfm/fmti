@@ -1,0 +1,524 @@
+Indicator,Definition,Notes,Disclosure
+Data acquisition methods,What methods does the developer use to acquire data used to build the model?,"Which of the following data acquisition methods does the developer use:  
+(i) acquiring existing public datasets,
+(ii) crawling the web,
+(iii) using data acquired via its existing products and services,
+(iv) licensing existing data from external parties,
+(v) having humans create or annotate new data, 
+(vi) using models to generate new data,  or
+(vii) other data acquisition methods not captured by the above.
+
+For example, if the developer uses reinforcement learning from human feedback to train models using model-generated outputs with human preference annotations, this would satisfy categories (v) and (vi).
+
+Alternatively, if the developer post-trains its model using off-the-shelf preference data (for example, the Alpaca dataset), this would satisfy category (i).","The most relevant document is the Qwen 3 technical report. The relevant section on data acquisition first describes pretraining data: ""Specifically, we collected twice as many pre-training tokens—covering three times
+more languages. All Qwen3 models are trained on a large and diverse dataset consisting of 119 languages
+and dialects, with a total of 36 trillion tokens. This dataset includes high-quality content in various
+3
+domains such as coding, STEM (Science, Technology, Engineering, and Mathematics), reasoning tasks,
+books, multilingual texts, and synthetic data.
+To further expand the pre-training data corpus, we first employ the Qwen2.5-VL model (Bai et al., 2025)
+to perform text recognition on a large volume of PDF-like documents. The recognized text is then refined
+using the Qwen2.5 model (Yang et al., 2024b), which helps improve its quality. Through this two-step
+process, we are able to obtain an additional set of high-quality text tokens, amounting to trillions in total.
+Besides, we employ Qwen2.5 (Yang et al., 2024b), Qwen2.5-Math (Yang et al., 2024c), and Qwen2.5-Coder
+(Hui et al., 2024) models to synthesize trillions of text tokens in different formats, including textbooks,
+question-answering, instructions, and code snippets, covering dozens of domains. Finally, we further
+expand the pre-training corpus by incorporating additional multilingual data and introducing more
+languages. Compared to the pre-training data used in Qwen2.5, the number of supported languages has
+been significantly increased from 29 to 119, enhancing the model’s linguistic coverage and cross-lingual
+capabilities."" A further reasoning stage in pretraining is described by ""Reasoning Stage (S2): To further improve the reasoning ability, we optimize the pre-training
+corpus of this stage by increasing the proportion of STEM, coding, reasoning, and synthetic data"", followed by a long-context stage: ""In the final pre-training stage, we collect high-quality long context corpora
+to extend the context length of Qwen3 models. All models are pre-trained on hundreds of billions
+of tokens with a sequence length of 32,768 tokens"". Beyond pre-training, further post-training is described."
+Public datasets,What are the top-5 sources (by volume) of publicly available datasets acquired for building the model?,We define a source as the entity or means by which the developer acquires data. We define the top-5 sources as the top-5 sources by data volume. ,No information provided about public datasets.
+Crawling,"If data collection involves web-crawling, what is the crawler name and opt-out protocol?","We award this point for disclosure of the crawler name and opt-out protocols, including if/how they respect the Robots Exclusion Protocol (robots.txt).",No information provided about crawling.
+Usage data used in training,What are the top-5 sources (by volume) of usage data from the developer's products and services that are used for building the model?,We define usage data as data collected from the use of a developer's products or services.,"Via one product (Qwen Chat) Alibaba discloses it may use ""de-identified user content"" ""to improve the accuracy and quality of our services (including our AI models)"""
+Notice of usage data used in training,"For the top-5 sources of usage data, how are users of these products and services made aware that this data is used for building the model?","We define usage data notice as the proactive disclosure to users of how their data is used for model development. For example, via a pop-up with a description, a link to the privacy policy, or link to a description of company practices. ","Via one product (Qwen Chat) Alibaba discloses it may use ""de-identified user content"" ""to improve the accuracy and quality of our services (including our AI models)"""
+Licensed data sources,What are the top-5 sources (by volume) of licensed data acquired for building the model?,"We define a source as the entity from which the developer acquires data. For example, the Associated Press is reportedly a source of licensed data for OpenAI.","No information is provided about licensed data in Aliababa's own documentation. Aliababa appears to have signed data licensing deals with, for example, China Media Group"
+Licensed data compensation,"For each of the top-5 sources of licensed data, are details related to compensation disclosed?",We award this point if the model developer describes the compensation structure specified in the contract with the data source or indicates they are prohibited from sharing this information if contractually mandated.,"No information is provided about licensed data in Aliababa's own documentation. Aliababa appears to have signed data licensing deals with, for example, China Media Group"
+New human-generated data sources,What are the top-5 sources (by volume) of new human-generated data for building the model?,"We define a source as the entity or means by which the developer acquires data. For example, Scale AI could be a source of new human-generated data. By new, we mean the data is specifically acquired for the purposes of building the model.","The most relevant document is the Qwen 3 technical report. The relevant passage is: ""After reserving a validation query set, we generate N candidate responses for each remaining query
+using QwQ-32B (Qwen Team, 2025). When QwQ-32B consistently fails to generate correct solutions,
+human annotators manually assess the accuracy of the responses. For queries with positive Pass@N,
+further stringent filtering criteria are applied to remove responses that (1) yield incorrect final answers,
+(2) contain substantial repetition, (3) clearly indicate guesswork without adequate reasoning, (4) exhibit
+inconsistencies between the thinking and summary contents, (5) involve inappropriate language mixing or
+stylistic shifts, or (6) are suspected of being overly similar to potential validation set items. Subsequently,
+a carefully selected subset of the refined dataset is used for the initial cold-start training of the reasoning
+patterns. The objective at this stage is to instill foundational reasoning patterns in the model without
+overly emphasizing immediate reasoning performance. This approach ensures that the model’s potential
+is not limited, allowing for greater flexibility and improvement during the subsequent reinforcement
+learning (RL) phase. To achieve this objective effectively, it is preferable to minimize both the number of
+training samples and the training steps during this preparatory phase."""
+Instructions for data generation,"For each of the top-5 sources of human-generated data, what instructions does the developer provide for data generation?","The instructions should be those provided to the data source. For example, if a third-party vendor works directly with the data laborers to produce the data, the instructions from the developer to this vendor should be disclosed.",No information provided about instructions.
+Data laborer practices,"For the top-5 sources of human-generated data, how are laborers compensated, where are they located, and what labor protections are in place?","For each data source, we require (i) the compensation in either USD or the local currency, (ii) any countries where at least 25% of the laborers are located, and (iii) a description of any labor protections. We will award this point if the developer discloses that it is not aware of data laborer practices.",No information provided about labor practices.
+Synthetic data sources,What are the top-5 sources (by volume) of synthetic data acquired for building the model?,We define a source of synthetic data as a non-human mechanism (e.g. a machine learning model) used to generate the data.,"The most relevant document is the Qwen 3 technical report. The relevant passages include: ""we generate N candidate responses for each remaining query
+using QwQ-32B"" and ""To ensure that the performance of the Stage 2 model is not compromised by the additional SFT, the
+“thinking” data is generated via rejection sampling on Stage 1 queries using the Stage 2 model itself"" and ""To efficiently expand the training data, we
+employ a multi-modal approach: Qwen2.5-VL (Bai et al., 2025) is finetuned to extract text from extensive
+PDF documents. We also generate synthetic data using domain-specific models: Qwen2.5-Math (Yang
+et al., 2024c) for mathematical content and Qwen2.5-Coder (Hui et al., 2024) for code-related data."""
+Synthetic data purpose,"For the top-5 sources of synthetically generated data, what is the primary purpose for data generation?",We define a source of synthetic data as a non-human mechanism (e.g. a machine learning model) used to generate the data.,"The most relevant document is the Qwen 3 technical report. The relevant passages include: ""we generate N candidate responses for each remaining query
+using QwQ-32B"" and ""To ensure that the performance of the Stage 2 model is not compromised by the additional SFT, the
+“thinking” data is generated via rejection sampling on Stage 1 queries using the Stage 2 model itself"" and ""To efficiently expand the training data, we
+employ a multi-modal approach: Qwen2.5-VL (Bai et al., 2025) is finetuned to extract text from extensive
+PDF documents. We also generate synthetic data using domain-specific models: Qwen2.5-Math (Yang
+et al., 2024c) for mathematical content and Qwen2.5-Coder (Hui et al., 2024) for code-related data."""
+Data processing methods,What are the methods the developer uses to process acquired data to determine the data directly used in building the model?,"We will award this point for disclosure of all of the methods used to process acquired data. Data processing refers to any method that substantively changes the content of the data. For example, compression or changing the data file format is generally not in the scope of this indicator.","The most relevant document is the Qwen 3 technical report. The relevant passage on data processing during pre-training states: ""To further expand the pre-training data corpus, we first employ the Qwen2.5-VL model (Bai et al., 2025)
+to perform text recognition on a large volume of PDF-like documents. The recognized text is then refined
+using the Qwen2.5 model (Yang et al., 2024b), which helps improve its quality. Through this two-step
+process, we are able to obtain an additional set of high-quality text tokens, amounting to trillions in total.
+Besides, we employ Qwen2.5 (Yang et al., 2024b), Qwen2.5-Math (Yang et al., 2024c), and Qwen2.5-Coder
+(Hui et al., 2024) models to synthesize trillions of text tokens in different formats, including textbooks,
+question-answering, instructions, and code snippets, covering dozens of domains. Finally, we further
+expand the pre-training corpus by incorporating additional multilingual data and introducing more
+languages. Compared to the pre-training data used in Qwen2.5, the number of supported languages has
+been significantly increased from 29 to 119, enhancing the model’s linguistic coverage and cross-lingual
+capabilities.
+We have developed a multilingual data annotation system designed to enhance both the quality and
+diversity of training data. This system has been applied to our large-scale pre-training datasets, annotating
+over 30 trillion tokens across multiple dimensions such as educational value, fields, domains, and safety.
+These detailed annotations support more effective data filtering and combination. Unlike previous
+studies (Xie et al., 2023; Fan et al., 2023; Liu et al., 2024b) that optimize the data mixture at the data source
+or domain level, our method optimizes the data mixture at the instance-level through extensive ablation
+experiments on small proxy models with the fine-grained data labels."" In addition, further information about data processing is provided for the four stages of post-training: Long-CoT Cold Start, Reasoning RL, Thinking Mode Fusion, and General RL."
+Data processing purpose,"For each data processing method, what is its primary purpose?","Data processing refers to any method that substantively changes the content of the data. For example, compression or changing the data file format is generally not in the scope of this indicator.","The most relevant document is the Qwen 3 technical report. The relevant passage on data processing during pre-training states: ""To further expand the pre-training data corpus, we first employ the Qwen2.5-VL model (Bai et al., 2025)
+to perform text recognition on a large volume of PDF-like documents. The recognized text is then refined
+using the Qwen2.5 model (Yang et al., 2024b), which helps improve its quality. Through this two-step
+process, we are able to obtain an additional set of high-quality text tokens, amounting to trillions in total.
+Besides, we employ Qwen2.5 (Yang et al., 2024b), Qwen2.5-Math (Yang et al., 2024c), and Qwen2.5-Coder
+(Hui et al., 2024) models to synthesize trillions of text tokens in different formats, including textbooks,
+question-answering, instructions, and code snippets, covering dozens of domains. Finally, we further
+expand the pre-training corpus by incorporating additional multilingual data and introducing more
+languages. Compared to the pre-training data used in Qwen2.5, the number of supported languages has
+been significantly increased from 29 to 119, enhancing the model’s linguistic coverage and cross-lingual
+capabilities.
+We have developed a multilingual data annotation system designed to enhance both the quality and
+diversity of training data. This system has been applied to our large-scale pre-training datasets, annotating
+over 30 trillion tokens across multiple dimensions such as educational value, fields, domains, and safety.
+These detailed annotations support more effective data filtering and combination. Unlike previous
+studies (Xie et al., 2023; Fan et al., 2023; Liu et al., 2024b) that optimize the data mixture at the data source
+or domain level, our method optimizes the data mixture at the instance-level through extensive ablation
+experiments on small proxy models with the fine-grained data labels."" In addition, further information about data processing is provided for the four stages of post-training: Long-CoT Cold Start, Reasoning RL, Thinking Mode Fusion, and General RL."
+Data processing techniques,"For each data processing method, how does the developer implement the method?","Data processing refers to any method that substantively changes the content of the data. For example, compression or changing the data file format is generally not in the scope of this indicator.","The most relevant document is the Qwen 3 technical report. The relevant passage on data processing during pre-training states: ""To further expand the pre-training data corpus, we first employ the Qwen2.5-VL model (Bai et al., 2025)
+to perform text recognition on a large volume of PDF-like documents. The recognized text is then refined
+using the Qwen2.5 model (Yang et al., 2024b), which helps improve its quality. Through this two-step
+process, we are able to obtain an additional set of high-quality text tokens, amounting to trillions in total.
+Besides, we employ Qwen2.5 (Yang et al., 2024b), Qwen2.5-Math (Yang et al., 2024c), and Qwen2.5-Coder
+(Hui et al., 2024) models to synthesize trillions of text tokens in different formats, including textbooks,
+question-answering, instructions, and code snippets, covering dozens of domains. Finally, we further
+expand the pre-training corpus by incorporating additional multilingual data and introducing more
+languages. Compared to the pre-training data used in Qwen2.5, the number of supported languages has
+been significantly increased from 29 to 119, enhancing the model’s linguistic coverage and cross-lingual
+capabilities.
+We have developed a multilingual data annotation system designed to enhance both the quality and
+diversity of training data. This system has been applied to our large-scale pre-training datasets, annotating
+over 30 trillion tokens across multiple dimensions such as educational value, fields, domains, and safety.
+These detailed annotations support more effective data filtering and combination. Unlike previous
+studies (Xie et al., 2023; Fan et al., 2023; Liu et al., 2024b) that optimize the data mixture at the data source
+or domain level, our method optimizes the data mixture at the instance-level through extensive ablation
+experiments on small proxy models with the fine-grained data labels."" In addition, further information about data processing is provided for the four stages of post-training: Long-CoT Cold Start, Reasoning RL, Thinking Mode Fusion, and General RL."
+Data size,Is the size of the data used in building the model disclosed?,"To receive this point, the developer should report data size in appropriate units (e.g. bytes, words, tokens, images, frames) and broken down by modality. Data size should be reported to a precision of one significant figure (e.g. 4 trillion tokens, 200 thousand images). The size should reflect data directly used in building the model (i.e. training data) and not data that was acquired but unused, or data used to evaluate the model.","The most relevant document is the Qwen 3 technical report. The relevant passage states: ""General Stage (S1): At the first pre-training stage, all Qwen3 models are trained on over 30
+trillion tokens using a sequence length of 4,096 tokens. At this stage, the models have been fully
+pre-trained on language proficiency and general world knowledge, with training data covering
+119 languages and dialects.
+(2) Reasoning Stage (S2): To further improve the reasoning ability, we optimize the pre-training
+corpus of this stage by increasing the proportion of STEM, coding, reasoning, and synthetic data.
+The models are further pre-trained with about 5T higher-quality tokens at a sequence length of
+4,096 tokens. We also accelerate the learning rate decay during this stage.
+(3) Long Context Stage: In the final pre-training stage, we collect high-quality long context corpora
+to extend the context length of Qwen3 models. All models are pre-trained on hundreds of billions
+of tokens with a sequence length of 32,768 tokens. The long context corpus includes 75% of text
+between 16,384 to 32,768 tokens in length, and 25% of text between 4,096 to 16,384 in length."""
+Data language composition,"For all text data used in building the model, what is the composition of languages?","To receive this point, the developer should report (i) all languages which make up at least 1% of the data and their corresponding proportions and (ii) a brief description of how languages are labeled (if a publicly available tool is used, include a link to the tool). Proportions should be reported to a precision of two significant figures and should describe proportions of documents labeled with some langauge. An ""Unknown"" category may be included to denote documents where the language could not be identified.","Qwen 3 blog post states: ""Multilingual Support
+Qwen3 models are supporting 119 languages and dialects. This extensive multilingual capability opens up new possibilities for international applications, enabling users worldwide to benefit from the power of these models.
+
+Language Family        Languages & Dialects
+Indo-European        English, French, Portuguese, German, Romanian, Swedish, Danish, Bulgarian, Russian, Czech, Greek, Ukrainian, Spanish, Dutch, Slovak, Croatian, Polish, Lithuanian, Norwegian Bokmål, Norwegian Nynorsk, Persian, Slovenian, Gujarati, Latvian, Italian, Occitan, Nepali, Marathi, Belarusian, Serbian, Luxembourgish, Venetian, Assamese, Welsh, Silesian, Asturian, Chhattisgarhi, Awadhi, Maithili, Bhojpuri, Sindhi, Irish, Faroese, Hindi, Punjabi, Bengali, Oriya, Tajik, Eastern Yiddish, Lombard, Ligurian, Sicilian, Friulian, Sardinian, Galician, Catalan, Icelandic, Tosk Albanian, Limburgish, Dari, Afrikaans, Macedonian, Sinhala, Urdu, Magahi, Bosnian, Armenian
+Sino-Tibetan        Chinese (Simplified Chinese, Traditional Chinese, Cantonese), Burmese
+Afro-Asiatic        Arabic (Standard, Najdi, Levantine, Egyptian, Moroccan, Mesopotamian, Ta’izzi-Adeni, Tunisian), Hebrew, Maltese
+Austronesian        Indonesian, Malay, Tagalog, Cebuano, Javanese, Sundanese, Minangkabau, Balinese, Banjar, Pangasinan, Iloko, Waray (Philippines)
+Dravidian        Tamil, Telugu, Kannada, Malayalam
+Turkic        Turkish, North Azerbaijani, Northern Uzbek, Kazakh, Bashkir, Tatar
+Tai-Kadai        Thai, Lao
+Uralic        Finnish, Estonian, Hungarian
+Austroasiatic        Vietnamese, Khmer
+Other        Japanese, Ko""rean, Georgian, Basque, Haitian, Papiamento, Kabuverdianu, Tok Pisin, Swahili"
+Data domain composition,"For all the data used in building the model, what is the composition of domains covered in the data?","To receive this point, the developer should report the composition of the main domains included in the data used to train the model. This data should be at a level of granularity lower than broad claims about training on ""internet data"". For example, this could include the proportion of data from e-commerce, social media, news, code, etc. based on the URLs from which the data is sourced. Proportions should be reported to a precision of one significant figure.","From section 3 of the Qwen 3 technical report: ""This dataset includes high-quality content in various
+domains such as coding, STEM (Science, Technology, Engineering, and Mathematics), reasoning tasks,
+books, multilingual texts, and synthetic data"""
+External data access,Does a third-party have direct access to the data used to build the model?,"By a third-party, we mean entities that are financially independent of the developer.  We will award this point if at least one such entity is named as having direct access to the data. With that said, we may award this point if the developer provides justifications for prohibiting access to narrowly-scoped parts of the data. ",No information provided about external data access.
+Data replicability,Is the data used to build the model described in enough detail to be externally replicable?,We will award this point if the description contains (i) a list of all publicly available training data and where to obtain it and (ii) a list of all training data obtainable from third parties and where to obtain it. These conditions refer to criteria 2 and 3 under the OSI Open Source AI v1.0 definition.,No information provided relevant for data replication.
+Compute usage for final training run,Is the amount of compute used in the model's final training run disclosed?,"Compute should be reported in appropriate units, which most often will be floating point operations (FLOPs), along with a description of the measurement methodology, which may involve estimation. Compute should be reported to a precision of one significant figure (e.g. 5 x 10^25 FLOPs). This number should represent the compute used to train the final model across all model stages.","No information provided about training compute, though the technical report notes: ""Qwen3 models are trained on over 30
+trillion tokens using a sequence length of 4,096 tokens""."
+Compute usage including R&D,"Is the amount of compute used to build the model, including experiments, disclosed?","Compute should be reported in appropriate units, which most often will be floating point operations (FLOPs), along with a description of the measurement methodology, which may involve estimation. Compute should be reported to a precision of one significant figure (e.g. 7 x 10^26 FLOPs). Compared to the previous indicator, this indicator should include an estimation of the total compute used across experiments used towards the final training run for the model (such as including hyperparameter optimization or other experiments), and not just the final training run itself.",No information provided about cumulative training compute.
+Development duration for final training run,Is the amount of time required to build the model disclosed?,"The amount of time should be specified in terms of both the continuous duration of time required and the number of hardware hours used. The continuous duration of time required to build the model should be reported in weeks, days, or hours to a precision of one significant figure (e.g. 3 weeks). The number of hardware hours should be reported to a precision of one significant figure and include the type of hardware hours. No form of decomposition into phases of building the model is required for this indicator, but it should be clear what the duration refers to (e.g. training the model, or training and subsequent evaluation and red teaming).","From the technical report: ""In addition, it achieves these gains with much greater training
+efficiency, requiring only 1/10 of the GPU hours compared to the four-stage training method."" Also Table 21, but for Qwen 8B"
+Compute hardware for final training run,"For the primary hardware used to build the model, is the amount and type of hardware disclosed?","In most cases, this indicator will be satisfied by information regarding the number and type of GPUs or TPUs used to train the model. The number of hardware units should be reported to a precision of one significant figure (e.g. 800 NVIDIA H100 GPUs). We will not award this point if (i) the training hardware generally used by the developer is disclosed, but the specific hardware for the given model is not, or (ii) the training hardware is disclosed, but the amount of hardware is not. We will award this point even if information about the interconnects between hardware units is not disclosed.",No information provided about training hardware.
+Compute provider,Is the compute provider disclosed?,"For example, the compute provider may be the model developer in the case of a self-owned cluster, a cloud provider like Microsoft Azure, Google Cloud Platform, or Amazon Web Services, or a national supercomputer. In the event that compute is provided by multiple sources or is highly decentralized, we will award this point if a developer makes a reasonable effort to describe the distribution of hardware owners.","""Qwen is a series of large language models (LLMs) independently developed by Alibaba Cloud."""
+Energy usage for final training run,Is the amount of energy expended in building the model disclosed?,"Energy usage should be reported in appropriate units, which most often will be megawatt-hours (mWh), along with a description of the measurement methodology, which may involve estimation. Energy usage should be reported to a precision of one significant figure (e.g. 500 mWh). No form of decomposition into compute phases is required, but it should be clear whether the reported energy usage is for a single model run or includes additional runs, or hyperparameter tuning, or training other models like reward models, or other steps in the model development process that necessitate energy usage. If the developer is unable to measure or estimate this quantity due to information not being available from another party (e.g. compute provider), we will award this point if the developer explicitly discloses what information it lacks and why it lacks it.",No information provided about training energy usage.
+Carbon emissions for final training run,Is the amount of carbon emitted in building the model disclosed?,"Emissions should be reported in appropriate units, which most often will be tons of carbon dioxide emitted (tCO2), along with a description of the measurement methodology, which may involve estimation. Emissions should be reported to a precision of one significant figure (e.g. 500 tCO2). No form of decomposition into compute phases is required, but it should be clear whether the reported emissions is for a single model run or includes additional runs, or hyperparameter tuning, or training other models like reward models, or other steps in the model development process that generate emissions. If the developer is unable to measure or estimate this quantity due to information not being available from another party (e.g. compute provider), we will award this point if the developer explicitly discloses what information it lack and why it lacks it. Emissions should correspond with the energy used in the previous indicator.",No information provided about environmental impacts.
+Water usage for final training run,Is the amount of clean water used in building the model disclosed?,"Clean water usage should be in appropriate units, which most often will be megaliters, along with a description of the measurement methodology, which may involve estimation. Clean water usage should be reported to a precision of one significant figure (e.g., 5000ML). No form of decomposition into compute phases is required, but it should be clear whether the reported water usage is for a single model run or includes additional runs, or hyperparameter tuning, or training other models like reward models, or other steps in the model development process that necessitates water usage. If the developer is unable to measure or estimate this quantity due to information not being available from another party (e.g. compute provider), we will award this point if the developer explicitly discloses what information it lacks and why it lacks it.",No information provided about environmental impacts.
+Internal compute allocation,How is compute allocated across the teams building and working to release the model?,"To receive a point, the developer should provide the compute allocated to each team involved in training the model. We understand there might be no clear allocation of compute across different teams; in that case, report an estimate of the compute used over the last year. Compute allocation should be reported to at least one significant figure.",No information provided about internal compute allocation.
+Model stages,Are all stages in the model development process disclosed?,"Stages refer to each identifiable step that constitutes a substantive change to the model during the model building process. We recognize that different developers may use different terminology for these stages, or conceptualize the stages differently. We will award this point if there is a clear and complete description of these stages.","From the technical report: ""The Qwen3 models are pre-trained through a three-stage process:
+(1) General Stage (S1): At the first pre-training stage, all Qwen3 models are trained on over 30
+trillion tokens using a sequence length of 4,096 tokens. At this stage, the models have been fully
+pre-trained on language proficiency and general world knowledge, with training data covering
+119 languages and dialects.
+(2) Reasoning Stage (S2): To further improve the reasoning ability, we optimize the pre-training
+corpus of this stage by increasing the proportion of STEM, coding, reasoning, and synthetic data.
+The models are further pre-trained with about 5T higher-quality tokens at a sequence length of
+4,096 tokens. We also accelerate the learning rate decay during this stage.
+(3) Long Context Stage: In the final pre-training stage, we collect high-quality long context corpora
+to extend the context length of Qwen3 models. All models are pre-trained on hundreds of billions
+of tokens with a sequence length of 32,768 tokens. The long context corpus includes 75% of text
+between 16,384 to 32,768 tokens in length, and 25% of text between 4,096 to 16,384 in length.
+Following Qwen2.5 (Yang et al., 2024b), we increase the base frequency of RoPE from 10,000 to
+1,000,000 using the ABF technique (Xiong et al., 2023). Meanwhile, we introduce YARN (Peng
+et al., 2023) and Dual Chunk Attention (DCA,""       ""The post-training pipeline of Qwen3 is strategically designed with two core objectives:
+(1) Thinking Control: This involves the integration of two distinct modes, namely the “non-thinking”
+and “thinking” modes, providing users with the flexibility to choose whether the model should
+engage in reasoning or not, and to control the depth of thinking by specifying a token budget for
+the thinking process.
+(2) Strong-to-Weak Distillation: This aims to streamline and optimize the post-training process
+for lightweight models. By leveraging the knowledge from large-scale models, we substantially
+reduce both the computational costs and the development efforts required for building smaller scale models."""
+Model objectives,"For all stages that are described, is there a clear description of the associated learning objectives or a clear characterization of the nature of this update to the model?","We recognize that different developers may use different terminology for these stages, or conceptualize the stages differently. We will award this point if there is a clear description of the update to the model related to each stage, whether that is the intent of the stage (e.g. making the model less harmful), a mechanistic characterization (e.g. minimizing a specific loss function), or an empirical assessment (e.g. evaluation results conducted before and after the stage).","""The Qwen3 models are pre-trained through a three-stage process:
+(1) General Stage (S1): At the first pre-training stage, all Qwen3 models are trained on over 30
+trillion tokens using a sequence length of 4,096 tokens. At this stage, the models have been fully
+pre-trained on language proficiency and general world knowledge, with training data covering
+119 languages and dialects.
+(2) Reasoning Stage (S2): To further improve the reasoning ability, we optimize the pre-training
+corpus of this stage by increasing the proportion of STEM, coding, reasoning, and synthetic data.
+The models are further pre-trained with about 5T higher-quality tokens at a sequence length of
+4,096 tokens. We also accelerate the learning rate decay during this stage.
+(3) Long Context Stage: In the final pre-training stage, we collect high-quality long context corpora
+to extend the context length of Qwen3 models. All models are pre-trained on hundreds of billions
+of tokens with a sequence length of 32,768 tokens. The long context corpus includes 75% of text
+between 16,384 to 32,768 tokens in length, and 25% of text between 4,096 to 16,384 in length.
+Following Qwen2.5 (Yang et al., 2024b), we increase the base frequency of RoPE from 10,000 to
+1,000,000 using the ABF technique (Xiong et al., 2023). Meanwhile, we introduce YARN (Peng
+et al., 2023) and Dual Chunk Attention (DCA,""       ""The post-training pipeline of Qwen3 is strategically designed with two core objectives:
+(1) Thinking Control: This involves the integration of two distinct modes, namely the “non-thinking”
+and “thinking” modes, providing users with the flexibility to choose whether the model should
+engage in reasoning or not, and to control the depth of thinking by specifying a token budget for
+the thinking process.
+(2) Strong-to-Weak Distillation: This aims to streamline and optimize the post-training process
+for lightweight models. By leveraging the knowledge from large-scale models, we substantially
+reduce both the computational costs and the development efforts required for building smaller scale models."""
+Code access,Does the developer release code that allows third-parties to train and run the model?,The released code does not need to match the code used internally. ,No code provided in relation to model training.
+Organization chart,How are employees developing and deploying the model organized internally? ,"To receive a point, the developer should provide both the internal organization chart for the team developing the model as well as the headcounts (or a proportion of headcounts) by the team.",The technical report lists core and (generic) contributors.
+Model cost,What is the cost of building the model?,"Monetary cost should be reported in appropriate currency (e.g. USD), along with the measurement methodology, which may involve estimation. Cost should be reported to a precision of one significant figure (e.g. 200 million USD). ",No information provided about monetary cost.
+Basic model properties,Are all basic model properties disclosed?,"Basic model properties include: the input modality, output modality, model size, model components, and model architecture. To receive a point, all model properties should be disclosed. Modalities refer to the types or formats of information that the model can accept as input. Examples of input modalities include text, image, audio, video, tables, graphs. Model components refer to distinct and identifiable parts of the model. We recognize that different developers may use different terminology for model components, or conceptualize components differently. Examples include: (i) For a text-to-image model, components could refer to a text encoder and an image encoder, which may have been trained separately. (ii) For a retrieval-augmented model, components could refer to a separate retriever module. Model size should be reported in appropriate units, which generally is the number of model parameters, broken down by named component. Model size should be reported to a precision of one significant figure (e.g. 500 billion parameters for text encoder, 20 billion parameters for image encoder). Model architecture is the overall structure and organization of a foundation model, which includes the way in which any disclosed components are integrated and how data moves through the model during training or inference. We recognize that different developers may use different terminology for model architecture, or conceptualize the architecture differently; a sufficient disclosure includes any clear, though potentially incomplete, description of the model architecture.","Input modality: Text
+
+Output modality: Text
+
+Model components: Decoder-only model pre-trained w/ SFT in three stages (General, reasoning, long-context), post-training in three stages (Long-CoT cold-start, reasoning RL w/ GRPO, thinking mode fusion w/ SFT, general RL, strong-to-weak distillation)
+
+Model size: 0.6B, 1.7B, 4B, 8B, 14B, 32B & MoE w/ 30B (3B active), 235B (22B active)
+
+Model architecture: Autoregressive transformer LM (fine-grained expert segmentation for MoE w/o shared experts) w/ GQA, SwiGLU, RoPE, RMSNorm w/ pre-normalization, QK-norm.
+
+""The architecture of the Qwen3 dense models is similar to Qwen2.5 (Yang et al., 2024b), including using
+Grouped Query Attention (GQA, Ainslie et al., 2023), SwiGLU (Dauphin et al., 2017), Rotary Positional
+Embeddings (RoPE, Su et al., 2024), and RMSNorm (Jiang et al., 2023) with pre-normalization. Besides,
+we remove QKV-bias used in Qwen2 (Yang et al., 2024a) and introduce QK-Norm (Dehghani et al., 2023)
+to the attention mechanism to ensure stable training for Qwen3. Key information on model architecture
+is provided in Table 1.
+The Qwen3 MoE models share the same fundamental architecture as the Qwen3 dense models. Key
+information on model architecture is provided in Table 2. We follow Qwen2.5-MoE (Yang et al., 2024b)
+and implement fine-grained expert segmentation (Dai et al., 2024). The Qwen3 MoE models have 128 total
+experts with 8 activated experts per token. Unlike Qwen2.5-MoE, the Qwen3-MoE design excludes shared
+experts. Furthermore, we adopt the global-batch load balancing loss (Qiu et al., 2025) to encourage expert
+specialization. These architectural and training innovations have yielded substantial improvements in
+model performance across downstream tasks.
+
+Table 1: Model architecture of Qwen3 dense models.
+
+Table 2: Model architecture of Qwen3 MoE models.
+
+Section 3, 4 (Pre-training, post-training)"""
+Deeper model properties,Is a detailed description of the model architecture disclosed?,"To receive a point, the model architecture should be described in enough detail to allow for an external entity to fully implement the model. Publicly available code or a configuration file for a model training library (e.g., GPT-NeoX) would be a sufficiently detailed description.",https://huggingface.co/Qwen/Qwen3-235B-A22B/blob/main/config.json
+Model dependencies,Is the model(s) the model is derived from disclosed?,"We will award this point for a comprehensive disclosure of the model or models on which the foundation model directly depends on or is derived from, as well as the method by which it was derived (e.g., through fine tuning, model merging, or distillation). Additionally, we will award a point if the developer discloses that the model is not dependent on or derived from any model.","Lightweight models (Qwen3-0.6B, 1.7B, 4B, 8B, and 14B; Qwen3-30B-A3B) are distilled from strong models (Qwen3-235B-A22B, Qwen3-32B)
+
+""Figure 1: Post-training pipeline of the Qwen3 series models.
+
+The Strong-to-Weak Distillation pipeline is specifically designed to optimize lightweight models, encompassing 5 dense models (Qwen3-0.6B, 1.7B, 4B, 8B, and 14B) and one MoE model (Qwen3-30B-A3B). This approach enhances model performance while effectively imparting robust mode-switching capabilities.
+The distillation process is divided into two primary phases:
+(1) Off-policy Distillation: At this initial phase, we combine the outputs of teacher models generated
+with both /think and /no think modes for response distillation. This helps lightweight student
+models develop basic reasoning skills and the ability to switch between different modes of
+thinking, laying a solid foundation for the next on-policy training phase.
+(2) On-policy Distillation: In this phase, the student model generates on-policy sequences for
+fine-tuning. Specifically, prompts are sampled, and the student model produces responses in
+either /think or /no think mode. The student model is then fine-tuned by aligning its logits
+with those of a teacher model (Qwen3-32B or Qwen3-235B-A22B) to minimize the KL divergence."""
+Benchmarked inference,Is the compute and time required for model inference disclosed for a clearly-specified task on clearly-specified hardware?,The duration should be reported in seconds to a precision of one significant figure (e.g. 0.002 seconds). Compute usage for inference should be reported in FLOPs/second to a precision of one significant figure (e.g. 5 x 10^21 FLOPs/second). The hardware in this evaluation need not be the hardware the developer uses for inference. The developer can report this figure over some known or public dataset.,No information provided
+Researcher credits,Is a protocol for granting external entities API credits for the model disclosed?,"A model credit access protocol refers to the steps, requirements, and considerations involved in granting credits to external entities. We will award this point if the developer discloses key details of its protocol, including (i) where external entities can request access to credits (e.g. via an access request form); (ii) explicit criteria for selecting external entities; and (iii) its policy on granting a transparent decision on whether access has been granted within a specified, reasonable period of time. Additionally, we will award a point if the developer discloses that it does not grant external entities API credits.",Overarching researcher programs with universities are described for Alibaba Cloud but not specifically for researcher credits in relation to Alibaba models like Qwen 3.
+Specialized access,Does the developer disclose if it provides specialized access to the model?,"Specialized access could include several categories, such as early access, subsidized access, or deeper access (e.g., to model weights or checkpoints, that are not publicly available). We will award this point if the developer discloses (i) if it provides specialized access and (ii) statistics on the number of users granted access across academia, industry, non-profits, and governments, to one significant figure.",No information provided
+Open weights,Are the model's weights openly released?,"To receive this point, model weights need to be publicly available at no cost. Developers may receive this point even if there are some restrictions on the external entities that are permitted access (e.g. geographic restrictions), insofar as these restrictions are transparent (e.g. via a license or some high-level description of who has been granted access to the foundation model).",Model weights are available on Huggingface: https://huggingface.co/Qwen/Qwen3-235B-A22B
+Agent Protocols,Are the agent protocols supported for the model disclosed?,"Agent protocols are specifications that define how autonomous agents exchange messages, context, or function calls with other agents, tools, or services (e.g., Anthropic’s Model Context Protocol (MCP) and Google’s Agent‑to‑Agent (A2A) spec). To earn this point, documentation must enumerate each protocol and describe any deviations or proprietary extensions. ","We support MCP for agents built with Qwen3-32B and 235B-A22B
+
+""For tool use capabilities, we recommend taking a look at Qwen-Agent, which provides a wrapper around these APIs to support tool use or function calling with MCP support. Tool use with Qwen3 can also be conducted with SGLang, vLLM, Transformers, llama.cpp, Ollama, etc. Follow guides in our documentation to see how to enable the support.
+
+https://github.com/QwenLM/Qwen-Agent/blob/main/examples/assistant_qwen3.py
+'model': 'qwen3-235b-a22b'
+'model': 'Qwen/Qwen3-32B'"""
+Capabilities taxonomy,Are the specific capabilities or tasks that were optimized for during post-training disclosed?,"Capabilities refer to the specific and distinctive functions that the model can perform. We recognize that different developers may use different terminology for capabilities, or conceptualize capabilities differently. We will award this point for a list of capabilities specifically optimized for in the post-training phase of the model, even if some of the capabilities are not reflected in the final model.","- Reasoning
+- Controllability of reasoning
+- Format following
+- Preference alignment
+- Agent ability (tool-use)
+- Abilities for specialized scenarios (e.g., RAG)
+
+""4.1 Long-CoT Cold Start
+The objective at this stage is to instill foundational reasoning patterns in the model without
+overly emphasizing immediate reasoning performance.
+
+4.2 Reasoning RL
+
+4.3 Thinking Mode Fusion
+The goal of the Thinking Mode Fusion stage is to integrate the “non-thinking” capabilities into the previously developed “thinking” model. This approach allows developers to manage and control reasoning behaviors, while also reducing the cost and complexity of deploying separate models for thinking and non-thinking tasks.
+
+4.4 General RL
+These tasks specifically target enhancements in the following core capabilities:
+instructions, including requirements related to content, format, length, and the use of structured output, delivering responses that align with user expectations.
+• Format Following: In addition to explicit instructions, we expect the model to adhere to specific formatting conventions. For instance, it should respond appropriately to the /think and /no think flags by switching between thinking and non-thinking modes, and consistently use
+designated tokens (e.g., <think> and </think>) to separate the thinking and response parts in
+the final output.
+• Preference Alignment: For open-ended queries, preference alignment focuses on improving the
+model’s helpfulness, engagement, and style, ultimately delivering a more natural and satisfying
+user experience.
+• Agent Ability: This involves training the model to correctly invoke tools via designated interfaces.
+During the RL rollout, the model is allowed to perform complete multi-turn interaction cycles
+with real environment execution feedback, thereby improving its performance and stability in
+long-horizon decision-making tasks.
+• Abilities for Specialized Scenarios: In more specialized scenarios, we design tasks tailored to the
+specific context. For example, in Retrieval-Augmented Generation (RAG) tasks, we incorporate
+reward signals to guide the model toward generating accurate and contextually appropriate
+responses, thereby minimizing the risk of hallucination."""
+Capabilities evaluation,Does the developer evaluate the model's capabilities prior to its release and disclose them concurrent with release?,"The evaluations must contain precise quantifications of the model's behavior in relation to the capabilities specified in the capabilities taxonomy. We will award this point for any clear, but potentially incomplete, evaluation of multiple capabilities.","- Reasoning: MATH-500, ZebraLogic
+- Controlability of reasoning: ThinkFollow
+- Format following: IFEval, Multi-IF, LengthControl, ThinkFollow
+- Preference alignment: Arena-Hard, AlignBench v1.1
+- Agent ability (tool-use): BFCL, ToolUse
+
+""General Tasks: We utilize benchmarks including MMLU-Redux (Gema et al., 2024), GPQADiamond (Rein et al., 2023), C-Eval (Huang et al., 2023), and LiveBench (2024-11-25) (White et al.,
+2024). For GPQA-Diamond, we sample 10 times for each query and report the averaged accuracy.
+• Alignment Tasks: To evaluate how well the model aligns with human preferences, we employ
+a suite of specialized benchmarks. For instruction-following performance, we report the strictprompt accuracy of IFEval (Zhou et al., 2023). To assess alignment with human preferences on
+general topics, we utilize Arena-Hard (Li et al., 2024) and AlignBench v1.1 (Liu et al., 2023b). For
+writing tasks, we rely on Creative Writing V3 (Paech, 2024) and WritingBench (Wu et al., 2025) to
+evaluate the model’s proficiency and creativity.
+• Math & Text Reasoning: For evaluating mathematical and logical reasoning skills, we employ
+high-level math benchmarks including MATH-500 (Lightman et al., 2023), AIME’24 and AIME’25
+(AIME, 2025), and text reasoning tasks including ZebraLogic (Lin et al., 2025) and AutoLogi
+(Zhu et al., 2025). For AIME problems, each year’s questions include Part I and Part II, totaling
+30 questions. For each question, we sample 64 times and take the average accuracy as the final
+score.
+• Agent & Coding: To test the model’s proficiency in coding and agent-based tasks, we use BFCL
+v3 (Yan et al., 2024), LiveCodeBench (v5, 2024.10-2025.02) (Jain et al., 2024), and Codeforces
+Ratings from CodeElo (Quan et al., 2025). For BFCL, all Qwen3 models are evaluated using the
+FC format, and yarn was used to deploy the models to a context length of 64k for Multi-Turn
+evaluation. Some baselines are derived from the BFCL leaderboard, taking the higher scores
+between FC and Prompt formats. For models not reported on the leaderboard, the Prompt
+formats are evaluated. For LiveCodeBench, for the non-thinking mode, we use the officially
+recommended prompt, while for the thinking mode, we adjust the prompt template to allow
+the model to think more freely, by removing the restriction You will not return anything
+except for the program. To evaluate the performance gap between models and competitive
+programming experts, we use CodeForces to calculate Elo ratings. In our benchmark, each
+problem is solved by generating up to eight independent reasoning attempts.
+• Multilingual Tasks: For multilingual capabilities, we evaluate four kinds of tasks: instruction
+following, knowledge, mathematics, and logical reasoning. Instruction following is assessed
+using Multi-IF (He et al., 2024), which focuses on 8 key languages. Knowledge assessment
+consisted of two types: regional knowledge evaluated through INCLUDE (Romanou et al.,
+2024), covering 44 languages, and general knowledge assessed with MMMLU (OpenAI, 2024)
+across 14 languages, excluding the unoptimized Yoruba language; for these two benchmarks,
+we sample only 10% of the original data to improve evaluation efficiency. The mathematics task
+employ MT-AIME2024 (Son et al., 2025), encompassing 55 languages, and PolyMath (Wang et al.,
+2025), which includes 18 languages. Logical reasoning is evaluated using MlogiQA, covering 10
+languages, sourced from Zhang et al. (2024)."""
+External reproducibility of capabilities evaluation,Are code and prompts that allow for an external reproduction of the evaluation of model capabilities disclosed?,"The released code and prompts need not be the same as what is used internally, but should allow the developer's results on all capability evaluations to be reproduced. The released code must be open source, following the OSI definition of open source.","The introduced benchmarks don't seem to be public, the other benchmarks have public prompts and/or code.
+
+Not 100% clear that they use the same code for those benchmarks.
+
+""To evaluate the effectiveness of Thinking Mode
+Fusion and General Reinforcement Learning (RL) during the post-training, we conduct evaluations on
+various stages of the Qwen-32B model. In addition to the datasets mentioned earlier, we introduce several
+in-house benchmarks to monitor other capabilities. These benchmarks include:
+• CounterFactQA: Contains counterfactual questions where the model needs to identify that the
+questions are not factual and avoid generating hallucinatory answers.
+• LengthCtrl: Includes creative writing tasks with length requirements; the final score is based on
+the difference between the generated content length and the target length.
+• ThinkFollow: Involves multi-turn dialogues with randomly inserted /think and /no think
+flags to test whether the model can correctly switch thinking modes based on user queries.
+• ToolUse: Evaluates the stability of the model in single-turn, multi-turn, and multi-step tool calling
+processes. The score includes accuracy in intent recognition, format accuracy, and parameter
+accuracy during the tool calling process."
+Train-test overlap,Does the developer measure and disclose the overlap between the training set and the dataset used to evaluate model capabilities?,"We will award this point if, with every capability evaluation for which the developer reports results, the developer reports the overlap between the training set of the model and the dataset used for evaluation, as well as the general methodology for computing train-test overlap (e.g. a description of how n-gram matching was used). ","No information provided, though Alibaba did provide this information for Qwen-2"
+Risks taxonomy,Are the risks considered when developing the model disclosed?,"Risks refer to possible negative consequences or undesirable outcomes that can arise from the model's deployment and usage. These consequences or outcomes may arise from model limitations (functions that the model cannot perform) or issues with the model's trustworthiness (e.g., its lack of robustness, reliability, calibration). We recognize that different developers may use different terminology for risks, or conceptualize risks differently. We will award this point for a complete list of risks considered, even if some of the risks are not reflected in the final model.",No information provided
+Risks evaluation,Does the developer evaluate the model's risks prior to its release and disclose them concurrent with release?,The evaluations must contain precise quantifications of the model's behavior in relation to the risks specified in the risk taxonomy. We will award this point for clear evaluations of the majority of the states risks.,No information provided
+External reproducibility of risks evaluation,Are code and prompts to allow for an external reproduction of the evaluation of model risks disclosed?,"The released code and prompts need not be the same as what is used internally, but should allow the developer's results on all risk evaluations to be reproduced. The released code must be open-source, following the OSI definition of open-source.",No information provided
+Pre-deployment risk evaluation,Are the external entities have evaluated the model pre-deployment disclosed?,"By external entities, we mean entities that are significantly or fully independent of the developer. We will award this point if the developer specifies the entity that carried out the pre-deployment analysis, discloses the terms of the analysis (such as conditions for releasing the evaluation results or the developer's control over the final results), as well as any financial transaction between the parties. We will award this point if the developer discloses no external entities have evaluated the model pre-deployment, or discloses only terms of the analysis where it is not bound by NDA while still naming all external entities.",No information provided
+External risk evaluation,Are the parties contracted to evaluated model risks disclosed?,"We will award this point if the developer discloses statistics regarding all contracted parties that are responsible for evaluating risks (not limited to external entities or pre-deployment evaluation). This includes the number of contracted for-profit or non-profit entities, government entities, independent contractors, and researchers contracted by the developer to evaluate risks. We will award this point if the developer discloses it has no such contracts.",No information provided
+Mitigations taxonomy,Are the post-training mitigations implemented when developing the model disclosed?,"By post-training mitigations, we refer to interventions implemented by the developer during the post-training phase to reduce the likelihood and/or the severity of the model’s risks. We recognize that different developers may use different terminology for mitigations, or conceptualize mitigations differently. We will award this point for a complete list of mitigations considered, even if some of the mitigations are not reflected in the final model. Alternatively, we will award this point if the developer reports that it does not mitigate risk in this way.",No information provided
+Mitigations taxonomy mapped to risk taxonomy,Does the developer disclose how the post-training mitigations map onto the taxonomy of risks?,"We will award this point for a complete mapping of the primary risk that each mitigation is meant to address, even if the mitigation potentially maps on to other risks in the taxonomy. Alternatively, we will award this point if the developer reports that it does not mitigate risk.",No information provided
+Mitigations efficacy,Does the developer evaluate and disclose the impact of post-training mitigations?,"We will award this point if the developer discloses the results on the risk evaluations before and after the post-training mitigations are applied. Alternatively, we will award this point if the developer reports that it does not mitigate risk in this way.",No information provided
+External reproducibility of mitigations evaluation,Are code and prompts to allow for an external reproduction of the evaluation of post-training mitigations disclosed?,"The released code and prompts need not be the same as what is used internally, but should allow the developer's results on all mitigations evaluations to be reproduced. The released code must be open-source, following the OSI definition of open-source. Alternatively, we will award this point if the developer reports that it does not mitigate risk.",No information provided
+Model theft prevention measures,Does the developer disclose the security measures used to prevent unauthorized copying (“theft”) or unauthorized public release of the model weights?,"This indicator assesses the developer's disclosures regarding how it addresses the risk that malicious actors or insiders could exfiltrate or replicate proprietary weights. Security measures could include insider threat analysis and detection, in addition to external threat management. Examples of such measures include encryption at rest, key management, remote attestation, or auditing for suspicious queries. We will award a point if the developer discloses specific steps taken to safeguard the model weights or that none are implemented.",No information provided
+Release stages,Are the stages of the model's release disclosed?,"Release stages include A/B testing, release on a user-facing product, GA release, open-weight release, etc.  We recognize that the release of a foundation model falls along a spectrum, with many forms of partial release, and that different developers may conceptualize release differently. We will award a point if the developer provides a clear identification of the stages through which the model was released.",No information provided
+Risk thresholds,Are risk thresholds disclosed?,"Risk thresholds determine when a risk level is unacceptably high to a developer (e.g. leading to the decision to not release a model), moderately high (e.g. triggering additional safety screening), or low enough to permit normal usage.
+
+We will award this point if the developer discloses explicit risk thresholds that clarify (i) which harmful outcomes are being scored, (ii) how the scores are computed (in general terms, not necessarily disclosing internal algorithms), and (iii) what triggers an action to block, delay, or otherwise modify a model's release. 
+
+Alternatively, we will award a point if the developer discloses that it does not consider explicit risk thresholds during model release. ",No information provided
+Versioning protocol,Is there a disclosed protocol for versioning and deprecation of the model?,"We will award a point if the developer discloses how model versions are labeled, updated, deprecated, and communicated to users.","""To optimize resource utilization and ensure you can use the latest and best models, Model Studio deprecates historical models based on model iteration and upgrades from time to time.
+
+Notification
+Timeline
+Snapshot models (model names with specific date identifiers, such as qwen-max-2025-01-25) will send deprecation notices 30 days before the deprecation date.
+
+Main models (core versions of a model series) will send deprecation notices 3 months before the deprecation date.
+
+Methods
+Through emails, internal messages, and announcements on the official website.
+
+Only users who have called the to-be-deprecated models within the last 3 months will receive the emails and internal messages."""
+Change log,Is there a disclosed change log for the model?,"We will award a point if the developer publishes a version-by-version record of new features, fixes, or performance improvements.",Alibaba maintains a changelog via its GitHub page and documentation pages for Qwen-3
+Foundation model roadmap,"Is a forward-looking roadmap for upcoming models, features, or products disclosed?","A foundation model roadmap is a transparent statement about how the developer intends to evolve or expand its LLM offerings, including upcoming models, major feature releases, or expanded products based on the model, along with approximate timelines or version milestones. It can be high-level (e.g., “new model Q2 2025”), but must exist publicly.","QwQ-Max-Preview blog post mentions official open-source release of QwQ-Max under Apache 2.0 License planned (URL: https://qwenlm.github.io/blog/qwq-max-preview/)
+Planned release of dedicated APP for Qwen Chat with real-time responsiveness and productivity tool integration (URL: https://qwenlm.github.io/blog/qwq-max-preview/)
+Planned release of smaller QwQ variants like QwQ-32B for local device deployment (URL: https://qwenlm.github.io/blog/qwq-max-preview/)
+QwQ-32B already released in March 2025 as part of roadmap execution (URL: https://qwenlm.github.io/blog/qwq-32b/)
+Alibaba's $53 billion investment over next three years for cloud computing and AI infrastructure advancement (URL: https://www.alibabacloud.com/blog/alibaba-cloud-strengthens-ai-capabilities-with-innovations-for-international-customers_602126)
+API access for Qwen3 models will soon be available through Alibaba's AI model development platform Model Studio (URL: https://www.alibabacloud.com/press-room/alibaba-introduces-qwen3-setting-new-benchmark)"
+Top distribution channels,Are the top-5 distribution channels for the model disclosed?,"We define distribution channels to be either an API provider (a pathway by which users can query the model with inputs and receive outputs) or a model distributor (a pathway by which model weights are released). We recognize that distribution channels may arise without the knowledge of the model developer. For example, the weights of a model may be released through one distribution channel and then be distributed through other channels.
+
+Distribution channels can be ranked by any reasonable metric (e.g., number of queries, number of downloads, number of users, revenue). A description of the metric should be provided.
+
+API providers and model distributors may be ranked separately using different metrics as long as the total number of distribution channels equals five (if five distribution channels exist). For example, the developer may choose to disclose the top-3 API providers (ranked by the number of queries) and the top-2 model distributors (ranked by the number of downloads).","Model weights are distributed through HuggingFace and ModelScope
+
+API access is provided through Alibaba Cloud (Model Studio)"
+Quantization,Is the quantization of the model served to customers in the top-5 distribution channels disclosed?,We will award this point for a disclosure of the model precision in each of the top-5 distribution channels. ,"Model weights are provided at a variety of quantization levels (e.g., bf16, fp8) on HuggingFace, ModelScope, and Kaggle"
+Terms of use,Are the terms of use of the model disclosed?,"We define terms of use to include terms of service and model licenses. We will award this point for a pointer to the terms of service or model license.
+
+In the event that model's licenses are written more generally, it should be clear which assets they apply to. We recognize that different developers may adopt different business models and therefore have different types of model licenses. Examples of model licenses include responsible AI licenses, open-source licenses, and licenses that allow for commercial use.
+
+Terms of service should be disclosed for each of the top-5 distribution channels. However, we will award this point if there are terms-of-service that appear to apply to the bulk of the model’s distribution channels.","Qwen Chat Terms of Service webpage
+
+The model weights are released under the apache-2.0 license (on HF, ModelScope, and Kaggle)
+
+Alibaba Cloud Model Studio Terms:
+""4.48 Alibaba Cloud Model Studio
+
+Alibaba Cloud may from time to time in its sole and absolute discretion make available the Model Studio services to you, relating to services for developing generative artificial intelligence (""AI"") models and applications, as described at Alibaba Cloud website (https://www.alibabacloud.com/) or via such other means as Alibaba Cloud may determine from time to time (""Model Studio"")."""
+Distribution channels with usage data,What are the top-5 distribution channels for which the developer has usage data?,"We define distribution channels to be either an API provider (a pathway by which users can query the model with inputs and receive outputs) or a model distributor (a pathway by which model weights are released). We recognize that distribution channels may arise without the knowledge of the model developer. For example, the weights of a model may be released through one distribution channel and then be distributed through other channels. 
+
+Distribution channels can be ranked by any reasonable metric (e.g., number of queries, number of downloads, number of users, revenue). A description of the metric should be provided.
+
+
+We define usage data as any form of developer-exclusive data collected from any of a developer's distribution channel. A developer has access to usage data from a distribution channel if it is able to use that data for downstream purposes (e.g., analytics, training etc.). Usage data may be shared outside of the developer, but it is initially collected by the distribution channel and shared to the developer.","ModelScope distribution platform mentioned for Chinese users (URL: https://qwenlm.github.io/blog/qwen3/)
+Alibaba Model Studio API access through DashScope (URL: https://www.alibabacloud.com/help/en/model-studio/use-qwen-by-calling-api)
+Qwen Chat Web interface at chat.qwen.ai (URL: https://qwenlm.github.io/blog/qwen3/)
+Qwen3 models available on Hugging Face with multiple format variants (URL: https://huggingface.co/Qwen/Qwen3-235B-A22B)"
+Amount of usage,"For each of the top-5 distribution channels, how much usage is there?","Usage should be reported as the number of queries over the span of a month, reported to the precision of one significant figure (e.g., 50 million queries).","""The Qwen model family has attracted over 300 million downloads worldwide and developers have created more than 100,000 Qwen-based derivative models on Hugging Face (URL: https://www.alibabacloud.com/en/press-room/alibaba-introduces-qwen3-setting-new-benchmark)"""
+Classification of usage data,"Is a representative, anonymized dataset classifying queries into usage categories disclosed?","Developers may either share a fully public dataset or a partially restricted dataset (e.g., under a research license). We will award this point if there is a clear, aggregated or sample dataset that reveals categories of tasks/queries.",No information provided.
+Data retention and deletion policy,Is a policy for data retention and deletion disclosed?,"A data retention and deletion policy is a policy for removing particular data from the training set and/or preventing it from being used if there is a user or external request (e.g., “right to be forgotten”) that also covers internal data governance. This includes whether there is a formal process to delete or retract data from future training runs and how long raw data is retained. It also clarifies how quickly deletions propagate to the model (e.g., “only in subsequent major model releases”).",Alibaba Cloud general privacy policy mentions data retention for legitimate business needs (URL: https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy)
+Geographic statistics,"Across all forms of downstream use, are statistics of model usage across geographies disclosed?","We will award this point if there is a meaningful, though potentially incomplete or vague, disclosure of geographic usage statistics at the country-level.",No information provided.
+Internal products and services,What are the top-5 internal products or services using the model?,"An internal product or service is a product or service built by the developer. Products or services can be ranked by any reasonable metric (e.g., number of users, queries, revenue). A description of the metric should be provided.","Qwen3 powers Alibaba's flagship AI super assistant application, Quark (URL: https://www.alibabacloud.com/en/press-room/alibaba-introduces-qwen3-setting-new-benchmark)"
+External products and services,What are the top-5 external products or services using the model?,"An external product or service is a product or service built by a party external to the developer. Products or services can be ranked by any reasonable metric (e.g., number of users, queries, revenue). A description of the metric should be provided.
+
+We will award a point if the developer discloses that that it does not have access to such metrics about external products or services.","DingTalk is equipped with an AI assistant powered by Alibaba Cloud's large model Tongyi Qianwen (URL: https://www.alibabacloud.com/blog/600404)
+Taobao and Tmall Group uses Qwen for AI-driven innovations including Taobao Wenwen chatbot and Ali Xiaomi customer service assistant (URL: https://www.alibabacloud.com/blog/601285)
+"
+Users of internal products and services,How many monthly active users are there for each of the top-5 internal products or services using the model?,"An internal product or service is a product or service built by the developer. The number of users refers to users who engaged or interacted with the model through the internal product or service over the last month or averaged over the last X months (this should be specified). Number of users should be specified to one significant figure (e.g. 100,000).","Quark serves more than 200 million users in China (URL: https://www.alibabacloud.com/blog/alibaba-unveils-flagship-ai-super-assistant-application-quark_602058)
+"
+Consumer/enterprise usage,"Across all distribution channels for which the developer has usage data, what portion of usage is consumer versus enterprise?","Consumer usage refers to usage by individual consumers. Enterprise usage refers to usage by enterprise customers (including government use). Consumer and enterprise usage should be calculated in terms of the number of queries by or the amount of revenue from consumer or enterprise users. Percentages should be specified to two significant digits (e.g., 12% consumer, 88% enterprise).","Alibaba Cloud reported over 90,000 enterprise deployments of Qwen models through Model Studio (URL: https://www.alibabacloud.com/blog/alibaba-clouds-qwen-models-attract-over-90000-enterprise-adoptions-within-its-first-year_601130)
+"
+Enterprise users,"Across all distribution channels for which the developer has usage data, what are the top-5 enterprises that use the model?",Enterprises should be ranked by the number of queries made or the amount of revenue from usage since the model's release. We will also award this point if the developer indicates it does not have access to enterprise usage data.,"Specific enterprise examples mentioned: Xiaomi (integrated into Xiao Ai assistant), Perfect World Games (game development), AstraZeneca (adverse event summary system), eSignGlobal (Contract Lifecycle Management), ZKH (product recommendation) (URL: https://www.alibabacloud.com/blog/alibaba-clouds-qwen-models-attract-over-90000-enterprise-adoptions-within-its-first-year_601130)
+"
+Government use,What are the 5 largest government contracts for use of the model?,"This includes known government contracts of enterprise or government-specific products and services that use the model. We will award this point if the developer discloses its top five government contracts ranked monetary value, though the developer may omit contracts where it is under NDA regarding the existence of the contract.","Alibaba Cloud partnership with Sarawak Government (Malaysia) for digital public services using AI technologies (URL: https://www.alibabacloud.com/blog/alibaba-cloud-and-sains-expand-collaboration-to-enhance-sarawaks-digital-public-services-and-sustainability-initiatives-with-innovative-ai-powered-so_601327)
+"
+Benefits Assessment,Is an assessment of the benefits of deploying the model disclosed?,We will award this point for any quantitative assessment of the benefits or potential benefits of deploying the model.,No information provided.
+AI bug bounty,Does the developer operate a public bug bounty or vulnerability reward program under which the model is in scope? ,"We will award this point for a publicly documented bug bounty or vulnerability reward program describing (i) in-scope vulnerabilities (e.g., prompt bypasses, data leaks), (ii) out-of-scope items, (iii) submission process, and (iv) reward tiers or recognition if applicable. We will award a point if the developer discloses it has no AI bug bounty that encourages external researchers to report security, privacy, or adversarial vulnerabilities in the model.",No information provided.
+Responsible disclosure policy,Does the developer clearly define a process by which external parties can disclose model vulnerabilities or flaws? ,"We will award this point for a description of the process external parties can use for responsbly disclosing model vulnerabilities and flaws, which should include (i) what mechanism external parties can use to disclose vulnerabilities or flaws (e.g., a form, an email) and (ii) what process follows a disclosure (e.g., how much time must parties wait until public release). This is often included with a bug bounty, but can also be standalone. We will award a point if the developer discloses it has no responsible disclosure policy.",No information provided.
+Safe harbor,Does the developer disclose its policy for legal action against external evaluators conducting good-faith research? ,"We will award this point if the developer discloses whether it has a policy committing it to not pursue legal action against external evaluators conducting good-faith research. This should not be only for software security vulnerabilities, but also AI flaws, and it should be based on researcher conduct standards, not at the sole discretion of the company. We will award this point if the developer provides a clear description of its policy regarding such protections for external researchers, or lack thereof. ",No information provided.
+Security incident reporting protocol,Are major security incidents involving the model disclosed? ,"A security incident reporting protocol provides post-deployment transparency about serious incidents or breaches. Security incidents refer to incidents where external security threats affect the model (e.g., data breaches or DDoS attacks on the service). We will award this point if the developer states (i) how to submit a security incident report, (ii) how quickly it will respond, and (iii) when and whether results are disclosed.
+
+Every incident need not be reported publicly, but the developer must disclose a policy determining how incidents are reported and disclosed.",No information provided.
+Misuse incident reporting protocol,Are misuse incidents involving the model disclosed? ,"A misuse incident reporting protocol provides post-deployment transparency about incidents of misuse involving the model. As opposed to the previous indicator, this indicator is about actors misusing the model to cause real-world harm, such as misinformation operations or cybersecurity attacks. We will award this point if the developer states (i) how to submit a misuse incident report, (ii) how quickly it will respond, and (iii) when and whether results are disclosed.
+
+Every incident need not be reported publicly, but there needs to be a policy governing how incidents are reported.",No information provided.
+Post-deployment coordination with government,Does the developer coordinate evaluation with government bodies?,"We will award this point if the developer specifies which government bodies it is coordinating with and for what types of post-deployment evaluations. Government bodies include AI Safety Institutes, national security agencies, national labs, and international governmental enties such as UN agencies or the G7. Evaluation here may also include sharing of the developer's proprietary evaluation results for help with interpretation. ",No information provided.
+Feedback mechanisms,"Does the developer disclose a way to submit user feedback? If so, is a summary of major categories of feedback disclosed?","We will award this point if the developer (i) discloses how users can submit feedback (e.g., via a form or a thumbs up/thumbs down for model responses) and (ii) discloses aggregated or categorized feedback data (e.g. a categorization of thumbs up and thumbs down data). ","""We appreciate feedback. If you provide us with any feedback, comments, suggestions, and/or responses to any surveys, or rate any Outputs (such as by using the thumbs up/thumbs down button next to Outputs) (“User Feedback”), by providing such User Feedback to us, you agree that:"""
+"Permitted, restricted, and prohibited model behaviors","Are model behaviors that are permitted, restricted, and prohibited disclosed?","We refer to a policy that includes this information as a model behavior policy, or a developer's policy on what the foundation model can and cannot do (e.g. such a policy may prohibit a model from responding to NSFW content). We recognize that different developers may adopt different business models and that some business models may make enforcement of a model behavior policy more or less feasible. We will award this point if at least two of the three categories (i.e. permitted, restricted, and prohibited model behaviors) are disclosed. Alternatively, we will award this point if the developer reports that it does not impose any restrictions on its model's behavior in this way.",No information provided.
+Model response characteristics,Are desired model response characteristics disclosed?,"Model response characteristics include default behaviors or behaviors that the developer steers the model to take. These may include being helpful, taking an objective point of view, or using tools only when necessary. We will award points for a clear description of desired model response characteristics or a statement that there are no such characteristics.","For open-ended queries, preference alignment focuses on improving the
+model’s helpfulness, engagement, and style, ultimately delivering a more natural and satisfying
+user experience."
+System prompt,Is the default system prompt for at least one distribution channel disclosed?,A system prompt is defined as the prompt provided to the system by default that guides the system's behavior. We will award this point for the disclosure of the verbatim text of the full system prompt as well as an explanation for the context in which the system prompt is used.,No information provided.
+Intermediate tokens,Are intermediate tokens used to generate model outputs available to end users? ,"Intermediate tokens are defined as any tokens generated by the model before the final output is shown to the user, such as model chains of thought. We will also award this point if a summary of intermediate tokens is made available to end users. If intermediate tokens or summaries are not made available, the developer should provide a justification.",Qwen3 models generate thinking content wrapped in <think>...</think> blocks that are visible to users (URL: https://huggingface.co/Qwen/Qwen3-235B-A22B)
+Internal product and service mitigations,"For internal products or services using the model, are downstream mitigations against adversarial attacks disclosed?","An internal product or service is a product or service built by the developer. Adversarial attacks include prompt injection, jailbreaking, or malicious queries. Mitigations against adversarial attacks might include specialized prompt filtering, content scanning, or real-time monitoring of queries or accounts. We will award this point if the developer discloses a clear statement of methods used (e.g., a specialized prompt sanitizer or adversarial pattern detector), or if the developer states it does not implement such product-level mitigations against adversarial attacks.","Qwen3 powers Alibaba's flagship AI super assistant application, Quark (URL: https://www.alibabacloud.com/blog/alibaba-introduces-qwen3-setting-new-benchmark-in-open-source-ai-with-hybrid-reasoning_602192)
+Alibaba Cloud provides comprehensive Content Moderation Service with deep learning technology for filtering inappropriate content (URL: https://www.alibabacloud.com/product/content-moderation)"
+External developer mitigations,Does the developer provide built-in or recommended mitigations against adversarial attacks for downstream developers?,"Downstream developers are developers who access the model through a distribution channel. Adversarial attacks include prompt injection, jailbreaking, or malicious queries. Mitigations against adversarial attacks that developers might build in or recommend include content filtering endpoints and recommended prompt templates. We will award this point if the developer discloses (i) technical mitigations (e.g., a developer provided moderation API or classifier) it offers or implements, (ii) recommended best practices or libraries for downstream developers, or (iii) an explicit statement that it does not build or recommend any particular downstream mitigations in this way.. ","Alibaba Cloud Content Moderation Service provides comprehensive content filtering for images, videos, text, and audio
+Content Moderation API offers text filtering for inappropriate content including pornography, terrorism, advertising, verbal abuse 
+Model Studio includes protection against DDoS attacks, CC attacks, traffic cleansing, web vulnerabilities, unauthorized traffic "
+Enterprise mitigations,Does the developer disclose additional or specialized mitigations for enterprise users?,"Enterprise users are, for example, large organizations with dedicated service agreements or users of enterprise-specific API deployments or products and services. Additional or specialized mitigations may address enterprise needs such as data privacy controls, advanced prompt/response monitoring, or compliance checks with regulations such as GDPR or HIPAA. Additional or specialized mitigations may include single-tenant deployments, custom filters for specific regulated industries, or advanced logging for compliance. We will award a point if the developer at least describes these mitigations or states that it does not provide such additional or specialized enterprise mitigations.","Alibaba Cloud Model Studio provides dedicated VPC network deployment for enterprise data security (URL: https://www.alibabacloud.com/en/product/modelstudio)
+PrivateLink support for secure enterprise data transmission and dedicated VPC connections (URL: https://www.alibabacloud.com/en/product/modelstudio)
+Enterprise-level data access management and data disclosure management capabilities (URL: https://www.alibabacloud.com/en/product/modelstudio)
+GDPR compliance support with Standard Contractual Clauses for EU data transfers (URL: https://www.alibabacloud.com/trust-center/gdpr)
+HIPAA compliance with Business Associate Agreement (BAA) support (URL: https://www.alibabacloud.com/trust-center/hipaa)
+Data isolation between R&D and production environments (URL: https://www.alibabacloud.com/en/product/modelstudio)
+Customizable content governance and monitoring for compliance (URL: https://www.alibabacloud.com/en/product/modelstudio)
+Advanced logging and encryption for enterprise data in OSS (URL: https://www.alibabacloud.com/en/product/modelstudio)"
+Detection of machine-generated content,Are mechanisms that are used for detecting content generated by this model disclosed?,"A mechanism for detecting machine-generated content might include storing a copy of all outputs generated by the model to compare against, implementing a watermark on model outputs, adding cryptographic metadata (such as C2PA), or training a detector post-hoc to identify such content. We will award this point if any such mechanism is disclosed or if the developer reports that it does not have or use any such mechanism.","Alibaba Cloud offers AI-generated image identification service through Content Moderation 2.0 (URL: https://www.alibabacloud.com/help/en/content-moderation/latest/image-audit-enhanced-edition-detects-aigc-infringement)
+Alibaba Cloud provides content moderation and watermarking services for data security through DLP solutions (URL: https://www.alibabacloud.com/help/en/sase/user-guide/manage-watermarks-to-ensure-data-security)"
+Documentation for responsible use,Does the developer provide documentation for responsible use by downstream developers?,"To receive a point, the developer should provide documentation for responsible use. This might include details on how to adjust API settings to promote responsible use, descriptions of how to implement mitigations, or guidelines for responsible use. We will also award this point if the developer states that it does not provide any such documentation. For example, the developer might state that the model is offered as is and downstream developers are accountable for using the model responsibly.",No information provided.
+Permitted and prohibited users,Is a description of who can and cannot use the model on the top-5 distribution channels disclosed?,We will award this point for a description of the company's policies for permitted and prohibitted users on its top-5 distribution channels. We will award this point if the developer has a more general acceptable use policy that it confirms applies across these distribution channels. We will award this point if there are no restrictions on users.,"""I. Account Registration and Security
+1. Minimum Age. You must be at least 18 years old or the age of majority in your jurisdiction, whichever is higher, in order to access or use the Services. If you are younger than 18 years old or the age of majority in your jurisdiction, you must not access or use the Services.""
+
+Alibaba Cloud Model Studio has general terms of service but no specific user restrictions disclosed for Qwen3-235B-A22B (URL: https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-product-terms-of-service-v-3-8-0)
+
+Qwen3-235B-A22B is released under Apache 2.0 license according to the blog post (URL: https://qwenlm.github.io/blog/qwen3/)"
+"Permitted, restricted, and prohibited uses","Which uses are explicitly allowed, conditionally permitted, or strictly disallowed under the acceptable use policy for the top-5 distribution channels?","We will award this point for a rough characterization of two or more of permitted, restricted, and prohibited uses across the top-5 distribution channels. We will award this point if the developer has a more general acceptable use policy that it confirms applies across these distribution channels. We will award this point if there are no restrictions on users.","""II. Use of Our Services
+You agree that you shall access and use our Services only in compliance with all applicable laws as well as these Terms, third party rights (including without limitation contractual and Intellectual Property Rights), any documentation, guidelines, or policies we may post on or make available via the Services, and any additional terms and conditions as we may specify from time to time.
+
+1. What You Cannot Do. Without prejudice to the generality of the foregoing, you shall not do or attempt to do any of the following:
+
+(a) recompile, decompile, disassemble, reverse engineer, or determine or attempt to determine any source code, algorithms, methods, techniques, or any underlying components (including without limitation the training data, model, parameters, or weights);
+(b) interact with, extract, or download any information, data or content from the Services (including without limitation the Outputs) in an automated manner;
+(c) scrape, mine, or distil any information, data or content from the Services (including without limitation the Outputs) whether using scripts, engines, software, tools, agents, devices, data mining tools, scraping techniques, distillation techniques, or other means or mechanisms, in each case whether manual or automated;
+(d) create, recreate, distribute, or advertise an index of any significant portion of the information, data, or content (including without limitation the Outputs) made available via the Services;
+(e) use any information, data, or content (including without limitation the Outputs) made available via the Services to develop or improve any products or services (including without limitation any models) that compete with or are similar in functionality to the Services (or any aspect thereof);
+(f) use the Services or Outputs to obtain unauthorized access to any system or information or to deceive any person;
+(g) access or use the Services or Outputs in any way that may infringe, misappropriate, or violate any applicable law or third party rights (including without limitation any Intellectual Property Rights or rights of publicity or privacy);
+(h) probe, scan, test the vulnerability of or attempt to circumvent any security or authentication measures or features, functionalities, data, information or content that you are not authorised to access;
+(i) interfere with, 'jailbreak', or disrupt the proper working of the Services (or any part thereof), and/or any website or any networks connected to the Services, whether via 'prompt injections' or otherwise;
+(j) access or use the Services or Outputs in any way that may abuse, harm, interfere with, or disrupt the integrity or performance of our Services or any person's enjoyment or legitimate use of the same; and/or
+(k) engage in any conduct that restricts or inhibits any person from using or enjoying our Services, or that we reasonably believe exposes us or any of our users, affiliates, or any other third party to any liability, damages, or detriment of any type, including reputational harm.
+2. Usage Policy.You agree that it is a continuing condition of your access and/or use of the Services that you comply at all times with our Usage Policy or via such other means as we may specify from time to time. Please review our Usage Policy carefully before using our Services. We may use automated detection and monitoring mechanisms to identify and act upon non-compliance with our Usage Policy. Without prejudice to generality of the foregoing, you further agree that:
+
+2.1 Do not compromise critical infrastructure or national security;
+2.2 Do not use the Services to generate any content for political campaigns;
+2.3 Do not Incite, facilitate, or promote violent extremism, terrorism, or hateful behavior;
+2.4 Do not submit content or create any sexually explicit or suggestive content, and other visually shocking or disturbing content;
+2.5 Do not compromise children’s safety;
+2.6 Do not compromise someone’s privacy or identity;
+2.7 Do not submit content or create any content that are inherently disrespectful, aggressive, hateful, or otherwise abusive;
+2.8 Do not spread misinformation;
+2.9 Do not perform or facilitate the activities that may significantly affect the safety, wellbeing, or rights of others, such as providing tailored legal, medical/health, or financial advice, making automated decisions in domains that affect an individual’s rights or well-being, etc."" Section III User content(c) the Prompts (in whole or in part):
+
+(i) are not offensive, inappropriate, illegal, or objectionable in any way;
+(ii) are not pornographic, nor do they contain profanity;
+(iii) are not defamatory or libellous;
+(iv) are not inaccurate, false, or misleading;
+(v) are not confidential or proprietary;
+(vi) do not contain any harmful inputs, code, or files that contain viruses, trojans, worms, time bombs, logic bombs or other material that is malicious or technologically harmful;
+(vii) do not contain any 'prompt injections' or other inputs intended or likely to circumvent any controls or restrictions in connection with the Services, or cause the Services to behave in an unexpected or unintended manner;
+(viii) meet all requirements applicable in relation to content published on the Internet or other electronic platforms, including without limitation under applicable law and codes of practice issued by competent government authorities and agencies; and
+(ix) will not expose us or any of our users to any harm or liability of any kind.
+
+Qwen3-235B-A22B is released under Apache 2.0 license according to the blog post (URL: https://qwenlm.github.io/blog/qwen3/)"
+AUP enforcement process,What are the methods used by the developer to enforce the acceptable policy?,"We will award this point if the developer discloses the processes (automated or manual) it uses to detect, review, and respond to potential acceptable use policy violations. We will award this point for a reasonable best-effort attempt to provide the bulk of this information, though one line indicating the developer reserves the right to terminate accounts is insufficient. Alternatively, we will award this point if the developer reports that it does not use such methods to enforce its acceptable use policy.","""II Use of Our Services.  Please review our Usage Policy carefully before using our Services. We may use automated detection and monitoring mechanisms to identify and act upon non-compliance with our Usage Policy. """
+AUP enforcement frequency,Are statistics on the developer's AUP enforcement disclosed?,"We will award this point if the developer discloses enforcement statistics (e.g., violation counts or actions taken) from its enforcement of its acceptable use policy. Alternatively, we will award this point if the developer reports that it does not enforce its acceptable use policy.",No information provided about statistics on the developer's AUP enforcement. 
+Regional policy variations,Are differences in the developer's acceptable use or model behavior policy across geographic regions disclosed?,"We will award this point if the developer discloses distinctions in its AUP or MBP and provides examples of differences in multiple specific regions, or states that no differences exist. For example, some jurisdictions impose content restrictions beyond those in the developer’s global policy that may necessesitate local deviations.",Alibaba Cloud terms refer to potential differences by region (URL: https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-product-terms-of-service-v-3-8-0)
+Oversight mechanism,Does the developer have an internal or external body that reviews core issues regarding the model prior to deployment?,"We will award this point if the developer discloses that is has such an internal or external body and provides some description of its scope, or alternatively if the developer discloses that it has no such body. An oversight mechanism covers governance structure beyond mere external risk evaluation, asking whether a formal body regularly reviews design and deployment decisions. Core issues may include model objectives, data usage, or risk mitigation.",No information provided about oversight mechanisms.
+Whistleblower protection,Does the developer disclose a whistleblower protection policy?,"We will award this point if the developer discloses (i) the existence of a whistleblower protection policy, (ii) what protections are afforded to whistleblowers, (iii) how reports are handled and investigated, and (iv) any external oversight of the whistleblower protection process. This might include protections for whistleblowers who report safety, ethical, or legal concerns related to the model. We will also award this point if the developer discloses that it has no such policy.",No information provided about whistleblower protection policies.
+Government commitments,What commitments has the developer made to government bodies?,We will award this point if the company provides an exhaustive list of commitments it has made to government bodies in the jurisdictions where it offers its model.,Alibaba is a participant in the China AI Safety and Security Commitments Framework.
