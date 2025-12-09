@@ -8,8 +8,11 @@ Foundation models like GPT-4 and Llama 3 impact millions of people. While the so
 For the follow-on version to the initial October 2023 [paper](https://arxiv.org/abs/2310.12941), we assess 14 foundation model developers (e.g. OpenAI, Google, Meta) on 100 indicators of transparency in relation to their flagship models (GPT-4, Gemini 1.0 Ultra API, Llama 2). 
 These indicators span transparency on upstream resources (e.g. data, labor, compute), foundation models themselves (e.g. capabilities, risks, mitigations), and downstream use (e.g. distribution channels, usage policies, downstream impact). 
 
+# December 2025 Foundation Model Transparency Index
+In 2025, we update the indicators to reflect the current AI ecosystem: we add indicators to reflect new developments in foundation model development and raise the bar for several indicators to ensure that disclosures provide useful information. We score 13 companies on their transparency, including DeepSeek, Alibaba, xAI, and Midjourney who we score for the first time.
+
 # Methodology
-1. **Targets.** We reached out to 19 major foundation model developers and requested that they prepare reports disclosing information related to our 100 transparency indicators. 14 agreed to submit these transparency reports. 
+1. **Targets.** In 2025, we reached out to 23 major foundation model developers and requested that they prepare reports disclosing information related to our 100 transparency indicators. 7 agreed to submit these transparency reports. To maintain coverage, the FMTI team prepared reports for 6 of the remaining companies.
 2. **Initial scoring.** For each developer, two researchers scored the developer's disclosures on the 100 indicators, assessing whether the developer satisfied the indicator on the basis of this information. We compared scores and resolved disagreements through discussion.
 4. **Company response.** We shared the initial scores with leaders at each company, encouraging them to contest scores they disagreed with. We addressed their reviews and conducted virtual meetings with companies, finalizing scores over the course of two months.
 
